@@ -40,3 +40,5 @@ main () {
 main
 
 echo All Done!
+echo Restarting shell
+exec "$(which $SHELL)" -l
