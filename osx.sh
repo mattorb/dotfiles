@@ -25,6 +25,12 @@ brew update && brew cleanup && brew cask cleanup
 brew tap fisherman/tap
 brew tap caskroom/cask
 
+brew install \
+    git \
+    jq \
+    ansible \
+    hub
+
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
 # install fish shell
@@ -34,7 +40,14 @@ brew install \
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 
+# fisher for completions
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+fish -c "fisher barnybug/docker-fish-completion"
+fish -c "fisher ansible-completion"
+
 brew cask install \
+    docker \
+    java \
     virtualbox \
     visual-studio-code 
 
