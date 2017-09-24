@@ -25,6 +25,7 @@ brew update && brew cleanup && brew cask cleanup
 brew tap fisherman/tap
 brew tap caskroom/cask
 
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
 # install fish shell
 brew install \
