@@ -31,9 +31,10 @@ main () {
     git config --global core.excludesfile $HOME/.gitignore_global
 
     if [[ $(uname -s) == "Darwin" ]]; then
-        "$ROOT/osx.sh"
+        "$ROOT/config-osx.sh"
+        "$ROOT/install-osx.sh"
     elif [[ $(uname -s) == "Linux" ]]; then
-        "$ROOT/linux.sh"
+        "$ROOT/install-linux.sh"
     fi
 }
 

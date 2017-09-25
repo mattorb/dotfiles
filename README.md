@@ -5,7 +5,7 @@ OS X, Linux, Fish, VS Code
 ```
 git clone ...
 cd dotfiles
-./install.sh
+./setup.sh
 ```
  
 many ideas on how to do this sourced from https://github.com/ASKobayashi/dotFiles and https://github.com/arhea/dotfiles
