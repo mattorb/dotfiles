@@ -53,3 +53,11 @@ brew cask install \
 
 #TODO: Add VS 'code' command line shortcut   "Shell Command: Install 'code' command in PATH"
 
+cat > ~/.ssh/config << EOF
+Host *
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsa
+EOF
+
+echo "Execute this to add ssh key (w/passphrase) to keychain:  ssh-add -K ~/.ssh/id_rsa"
