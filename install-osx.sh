@@ -51,7 +51,12 @@ brew cask install \
     virtualbox \
     visual-studio-code 
 
-#TODO: Add VS 'code' command line shortcut   "Shell Command: Install 'code' command in PATH"
+# Equivalent of VS [gui] Command Palette  "Shell command: Install 'code' command in PATH"
+ln -sf /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code
+
+code --install-extension TeddyDD.fish  # .fish lang support
+
+git config --global core.editor "code -w -n"
 
 cat > ~/.ssh/config << EOF
 Host *
