@@ -29,7 +29,8 @@ brew install \
     git \
     jq \
     ansible \
-    hub
+    hub \
+    diff-so-fancy 
 
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
@@ -58,13 +59,11 @@ code --install-extension TeddyDD.fish
 code --install-extension PeterJausovec.vscode-docker
 code --install-extension haaaad.ansible
 
+# only installed when osx, so not in the base template
 git config --global core.editor "code -w -n"
+git config --global core.pager "diff-so-fancy | less --tabs=1,5 -R"
 
-cat > ~/.ssh/config << EOF
-Host *
-  UseKeychain yes
-  AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_rsa
-EOF
-
-echo "Execute this to add ssh key (w/passphrase) to keychain:  ssh-add -K ~/.ssh/id_rsa"
+echo '1. Execute this to add ssh key (w/passphrase) to keychain:  ssh-add -K ~/.ssh/id_rsa'
+echo '2. Then git config --global user.name "Your Name"'
+echo '3. Then git config --global user.email "Your_Email@...com"'
+echo '4. Create a git Personal Access token, then:  "hub browse" and enter git user and Access token to configure hub to use that'

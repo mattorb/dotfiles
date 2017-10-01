@@ -18,7 +18,7 @@ install_dotfiles () {
             continue;
         else
              echo "Linking $source -> $dest"
-             ln -s "$source" "$dest"
+             ln -fs "$source" "$dest"
         fi
     done
 
