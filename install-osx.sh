@@ -52,6 +52,7 @@ brew cask install \
     docker \
     dropbox \
     java \
+    slack \
     virtualbox \
     visual-studio-code 
 
@@ -71,3 +72,4 @@ echo '2. Then git config --global user.name "Your Name"'
 echo '3. Then git config --global user.email "Your_Email@...com"'
 echo '4. Create a git Personal Access token, then:  "hub browse" and enter git user and Access token to configure hub to use that'
 echo '5. Configure dropbox user/password'
+echo '6. Configure Slack user/password'
