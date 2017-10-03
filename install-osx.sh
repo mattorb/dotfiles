@@ -29,8 +29,10 @@ brew install \
     git \
     jq \
     ansible \
+    csshX \ 
     hub \
-    diff-so-fancy 
+    diff-so-fancy \
+    vault 
 
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
@@ -48,6 +50,7 @@ fish -c "fisher ansible-completion"
 
 brew cask install \
     docker \
+    dropbox \
     java \
     virtualbox \
     visual-studio-code 
@@ -67,3 +70,4 @@ echo '1. Execute this to add ssh key (w/passphrase) to keychain:  ssh-add -K ~/.
 echo '2. Then git config --global user.name "Your Name"'
 echo '3. Then git config --global user.email "Your_Email@...com"'
 echo '4. Create a git Personal Access token, then:  "hub browse" and enter git user and Access token to configure hub to use that'
+echo '5. Configure dropbox user/password'
