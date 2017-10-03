@@ -55,7 +55,9 @@ fish -c "fisher barnybug/docker-fish-completion"
 fish -c "fisher ansible-completion"
 
 brew cask install \
+    arq \
     bartender \
+    carbon-copy-cloner \
     cd-to \
     docker \
     dropbox \
@@ -89,3 +91,5 @@ echo '9. Add Bartender license, configure bartender'
 echo '10. Install 1Password (6.8.1) and configure vaults'
 echo '11. Install IDEs'
 echo '12. Add cdto to finder toolbar:   Drag Applications/cd to.app onto the Finder toolbar while holding down the command(⌘) and option(⌥) keys'
+echo '13. Configure ARQ'
+echo '14. Configure Carbon Copy cloner'
