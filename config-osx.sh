@@ -80,7 +80,8 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 ###############################################################################
 
 # Save screenshots to the downloads folder
-defaults write com.apple.screencapture location -string "${HOME}/Downloads"
+mkdir ~/Desktop/Screenshots
+defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
