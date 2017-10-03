@@ -27,12 +27,18 @@ brew tap caskroom/cask
 
 brew install \
     git \
+    ruby \
+    go \
+    python \
     jq \
     ansible \
-    csshX \ 
+    awscli \
+    csshX \
     hub \
     diff-so-fancy \
-    vault 
+    packer \
+    terraform \
+    vault
 
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
@@ -52,6 +58,8 @@ brew cask install \
     docker \
     dropbox \
     java \
+    nvalt \
+    paw \
     slack \
     virtualbox \
     visual-studio-code 
@@ -73,3 +81,4 @@ echo '3. Then git config --global user.email "Your_Email@...com"'
 echo '4. Create a git Personal Access token, then:  "hub browse" and enter git user and Access token to configure hub to use that'
 echo '5. Configure dropbox user/password'
 echo '6. Configure Slack user/password'
+echo '7. Configure nvalt storage backend'
