@@ -55,6 +55,7 @@ fish -c "fisher barnybug/docker-fish-completion"
 fish -c "fisher ansible-completion"
 
 brew cask install \
+    1password \
     arq \
     bartender \
     carbon-copy-cloner \
@@ -88,7 +89,7 @@ echo '6. Configure Slack accounts'
 echo '7. Configure nvalt storage backend'
 echo '8. Install Air Mail from App Store and configure accounts'
 echo '9. Add Bartender license, configure bartender'
-echo '10. Install 1Password (6.8.1) and configure vaults'
+echo '10. Configure 1Password vaults'
 echo '11. Install IDEs'
 echo '12. Add cdto to finder toolbar:   Drag Applications/cd to.app onto the Finder toolbar while holding down the command(⌘) and option(⌥) keys'
 echo '13. Configure ARQ'
