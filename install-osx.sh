@@ -55,6 +55,7 @@ fish -c "fisher barnybug/docker-fish-completion"
 fish -c "fisher ansible-completion"
 
 brew cask install \
+    bartender \
     docker \
     dropbox \
     java \
@@ -82,3 +83,4 @@ echo '4. Create a git Personal Access token, then:  "hub browse" and enter git u
 echo '5. Configure dropbox user/password'
 echo '6. Configure Slack user/password'
 echo '7. Configure nvalt storage backend'
+echo '9. Add Bartender license, configure bartender'
