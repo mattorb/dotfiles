@@ -228,9 +228,6 @@ defaults write com.apple.dashboard mcx-disabled -bool true
 # Don’t show Dashboard as a Space
 defaults write com.apple.dock dashboard-in-overlay -bool true
 
-# Don’t automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock mru-spaces -bool false
-
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
 # Remove the animation when hiding/showing the Dock
@@ -301,12 +298,25 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
+
+##########
+# Spaces #
+##########
+
+# Don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
+# App->Space stickyness
+# re-export text plist with `defaults read ~/Library/Preferences/com.apple.spaces.plist > osx/spaces.plist`
+defaults import ~/Library/Preferences/com.apple.spaces.plist osx/spaces.plist
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
-# for app in "Activity Monitor" "cfprefsd" "Dock" "Finder" "Safari" "SystemUIServer" "Terminal"; \
-# 	do 
-# 	killall "${app}" > /dev/null 2>&1
-# done
+ for app in "Activity Monitor" "cfprefsd" "Dock" "Finder" "Safari" "SystemUIServer"; \
+ 	do 
+ 	killall "${app}" > /dev/null 2>&1
+ done
+
 echo "Done. Note that some of these changes require a logout/restart to take effect."
