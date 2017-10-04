@@ -309,7 +309,7 @@ defaults write com.apple.dock mru-spaces -bool false
 
 # App->Space stickyness
 # re-export text plist with `defaults read ~/Library/Preferences/com.apple.spaces.plist > osx/spaces.plist`
-defaults import ~/Library/Preferences/com.apple.spaces.plist osx/spaces.plist
+defaults import ~/Library/Preferences/com.apple.spaces.plist prefs/osx/spaces.plist
 
 ###############################################################################
 # Kill affected applications                                                  #
