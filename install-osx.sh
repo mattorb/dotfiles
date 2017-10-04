@@ -76,7 +76,7 @@ code --install-extension TeddyDD.fish
 code --install-extension PeterJausovec.vscode-docker
 code --install-extension haaaad.ansible
 
-ln -sf $(pwd)/osx/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+ln -sf $(pwd)/prefs/osx/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
 
 # only installed when osx, so not in the base template
 git config --global core.editor "code -w -n"
