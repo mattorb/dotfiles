@@ -65,7 +65,7 @@
 	gra = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
 
 # List all Aliases, and these comments  //  la = "!git config -l | grep alias | cut -c 7-"
-	la = "!cat ~/.gitconfig | sed -n -e '/# Human Aliases/,$p' | grep '^\t\\|\\#'"
+	la = "!cat ~/.gitaliases | sed -n -e '/# Human Aliases/,$p' | grep '^\t\\|\\#'"
 
 # show last tag
 	lasttag = describe --tags --abbrev=0

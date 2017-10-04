@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ln -sf $(pwd)/git/.gitconfig $HOME/.gitconfig
+ln -sf $(pwd)/git/.gitaliases $HOME/.gitaliases
 
 mkdir -p $HOME/.config/fish
 ln -sf $(pwd)/fish/completions "$HOME/.config/fish"
