@@ -1,0 +1,3 @@
+#!/bin/bash
+# usage: renameall oldstring newstring filepattern
+ruby -e "a = ARGV.shift; b = ARGV.shift; ARGV.each{ |f| File.rename(f, f.gsub(a, b)) }" "$@"
