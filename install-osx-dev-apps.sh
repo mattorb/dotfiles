@@ -55,17 +55,8 @@ fish -c "fisher barnybug/docker-fish-completion"
 fish -c "fisher ansible-completion"
 
 brew cask install \
-    1password \
-    arq \
-    bartender \
-    carbon-copy-cloner \
-    cd-to \
     docker \
-    dropbox \
     java \
-    nvalt \
-    paw \
-    slack \
     virtualbox \
     visual-studio-code 
 
