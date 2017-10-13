@@ -1,0 +1,10 @@
+#!/bin/bash
+
+unset DOCKER_HOST
+unset DOCKER_TLS_VERIFY
+unset DOCKER_CERT_PATH
+
+docker run -it --rm --name htop \
+  --pid host \
+  --net none \
+  mattorb/htop:1.0 "$@"
