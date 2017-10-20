@@ -17,7 +17,7 @@ function fish_right_prompt -d "Write out the right prompt"
   end
 
   # Print a red dot for failed commands.
-  if test $exit_code -ne 0
+  if test "$exit_code" -ne "0"
     set_color red
     echo -n "• "
     set_color normal
@@ -60,7 +60,7 @@ function fish_right_prompt -d "Write out the right prompt"
   end
 
   # Print the username when the user has been changed.
-  if test $USER != $LOGNAME
+  if test "$USER" != "$LOGNAME"
     echo -n "$USER@"
     set_color normal
   end

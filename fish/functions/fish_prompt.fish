@@ -59,14 +59,13 @@ function fish_prompt --description 'Write out the prompt'
     end
 
     set -l prompt_status
-    if test $last_status -ne 0
+    if test "$last_status" -ne "0"
         set prompt_status ' ' (set_color $fish_color_status) "[$last_status]" "$normal"
     end
 
     # Print the username when the user has been changed.
     if test "$USER" != "$LOGNAME"
       echo -n -s (set_color $fish_color_user) "$USER" 
-      echo -n "$USER@" $normal @
     end
 
     switch (prompt_hostname) 
