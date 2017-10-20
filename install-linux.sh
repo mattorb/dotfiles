@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 echo Configuring Linux
 
-# install fish shell
-apt-add-repository -y ppa:fish-shell/release-2
-apt update -y && apt install -y fish
+# Install FISH - CentOS 7
+cd /etc/yum.repos.d/
+yum install wget -y
+wget https://download.opensuse.org/repositories/shells:fish:release:2/CentOS_7/shells:fish:release:2.repo
+yum install fish -y
 
-echo "/usr/bin/fish" | sudo tee -a /etc/shells
 chsh -s /usr/bin/fish
+exec fish
