@@ -11,7 +11,7 @@ WORKER=3
 # There is no difference between nodes other than the naming convention we use to
 # distinguish between managers and workers. In production, you might choose to use
 # higher capacity instances (cpu+memory) for managers.
-for i in $(seq 1 $MANAGER); do docker-machine create --driver virtualbox m$i; done
+for i in $(seq 1 $MANAGER); do docker-machine create --driver virtualbox --virtualbox-memory "4096" m$i; done
 for i in $(seq 1 $WORKER); do docker-machine create --driver virtualbox w$i; done
 
 # Init the swarm
