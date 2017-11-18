@@ -198,6 +198,7 @@
         "com.microsoft.vscode" = "3E758DFC-308B-4C68-97FE-A2BF7C79DF7A";
         "com.tinyspeck.slackmacgap" = "04EF0A0D-CF0E-4C19-981F-9C7E47DCD802";
         "it.bloop.airmail2" = "F970F6D0-93B2-4EFC-A5E7-881C7277D3D5";
+        "net.elasticthreads.nv" = AllSpaces;
     };
     "spans-displays" = 0;
 }
