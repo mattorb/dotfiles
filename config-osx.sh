@@ -307,6 +307,10 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
+# instead of sliding entire screen left/right, cross-fade... less jarring
+defaults write com.apple.universalaccess reduceMotion -bool true
+
+
 # App->Space stickyness
 # re-export text plist with `defaults read ~/Library/Preferences/com.apple.spaces.plist > osx/spaces.plist`
 defaults import ~/Library/Preferences/com.apple.spaces.plist prefs/osx/spaces.plist
