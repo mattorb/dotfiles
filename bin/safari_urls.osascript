@@ -1,0 +1,14 @@
+#!/usr/bin/osascript
+tell application "Safari"
+    set docText to ""
+    set windowCount to count (every window where visible is true)
+    repeat with x from 1 to windowCount
+        set tabCount to number of tabs in window x
+        repeat with y from 1 to tabCount
+            set tabName to name of tab y of window x
+            set tabURL to URL of tab y of window x as string
+            set docText to docText & tabName & " – " & tabURL & linefeed as string
+        end repeat
+        set the clipboard to the docText
+    end repeat
+end tell
