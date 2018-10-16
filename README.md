@@ -1,6 +1,8 @@
 # My dot files
 OS X, Linux, Fish, VS Code
 
+Goals/etc here: [https://mattorb.com/dotfiles/](My dotfiles)
+
 # Usage
 ```
 git clone ...
