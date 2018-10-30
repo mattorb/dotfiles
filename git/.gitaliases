@@ -70,3 +70,6 @@
 # show last tag
 	lasttag = describe --tags --abbrev=0
 	lt = describe --tags --abbrev=0
+
+# show recent branches
+	short-recent = "for-each-ref --count=25 --sort=committerdate refs/heads/ --format='%(refname:short)'"
