@@ -38,7 +38,8 @@ brew install \
     diff-so-fancy \
     packer \
     terraform \
-    vault
+    vault \ 
+    fzf
 
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
