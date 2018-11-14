@@ -5,6 +5,7 @@
 #
 # NOTES:
 #  No support for private repos/orgs at the moment
+#  Is rate limited since it is not using a token yet
 #  No support for user/orgs with > 100 repos at the moment.  (100 is the per_page limit of github repo api)
 function fhub -d 'Open github homepage for repo. list user/orgs in $HOME/.fhub_user_orgs'
     if not test -e "$HOME/.fhub_user_orgs"
