@@ -73,3 +73,6 @@
 
 # show recent branches
 	short-recent = "for-each-ref --count=25 --sort=committerdate refs/heads/ --format='%(refname:short)'"
+
+# fuzzy add using fzf
+	fza = "!git ls-files -m -o --exclude-standard | fzf --print0 -m | xargs -0 -t -o git add"	
