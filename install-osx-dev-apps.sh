@@ -57,6 +57,7 @@ curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fishe
 fish -c "fisher barnybug/docker-fish-completion"
 fish -c "fisher ansible-completion"
 fish -c "fisher jethrokuan/fzf"
+fish -c "fisher derphilipp/enter-docker-fzf"
 
 brew cask install \
     docker \
