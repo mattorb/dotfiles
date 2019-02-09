@@ -9,6 +9,9 @@
 # Fixup staged changes to specified commit
 	fixup = !sh -c 'REV=$(git rev-parse $1) && git commit --fixup $@ && git rebase -i --autosquash $REV^' -
 
+# Commit staged changes into specific commit w/o opening editor
+	fixit = "!f() { git commit --fixup=$1; GIT_SEQUENCE_EDITOR=: git rebase -i --autosquash $1~1; }; f"
+
 # remove changes
 	scraplastcommit = reset --hard HEAD^
 
@@ -75,4 +78,28 @@
 	short-recent = "for-each-ref --count=25 --sort=committerdate refs/heads/ --format='%(refname:short)'"
 
 # fuzzy add using fzf
-	fza = "!git ls-files -m -o --exclude-standard | fzf --print0 -m | xargs -0 -t -o git add"	
+	fza = "!git ls-files -m -o --exclude-standard | fzf --print0 -m | xargs -0 -t -o git add --all"
+
+# fuzzy switch branch...  /fish/functions/fco.fish seems better
+	fco = "!git short-recent | fzf --print0 | xargs -0 -t git checkout"
+
+# fuzzy fix staged changes into existing commit
+	ffix = !HASH=`git log --pretty=oneline | head -n 100 | fzf` && git fixit `echo ${HASH} | awk '{ print $1 }'`
+
+# fuzzy rebase interactive choose existing commit to start from
+	frebase = !HASH=`git log --pretty=oneline | head -n 100 | fzf` && git rebase -i `echo ${HASH} | awk '{ print $1 }'`^
+
+# fuzzy edit untracked/modified files
+	fed = !FILES=`git status -s | awk '{ print $2 }' | fzf -x -m` && code ${FILES}
+
+# fuzzy edit files in conflict state
+	fedconflicts = !FILES=`git status -s | grep '^[UMDA]\\{2\\} ' | awk '{ print $2 }' | fzf -x -m` && code ${FILES}
+
+# fuzzy gitgrep working tree for pattern and choose file(s) to edit 
+	fgrep = !sh -c 'FILES=`git grep -l -A 0 -B 0 $1 $2 | fzf -x -m` && code `echo ${FILES} | cut -d':' -f1 | xargs`' -
+
+# fuzzy select past commit, and edit current state of file(s) changed in it
+	fedlog = !HASH=`git log --pretty=oneline | head -n 50 | fzf` && HASHZ=`echo ${HASH} | awk '{ print $1 }'` && FILES=`git show --pretty='format:' --name-only $HASHZ | grep -v -e '^$' | fzf -x -m` && code ${FILES}
+
+# fuzzy reset back to prior commit 
+	freset = !HASH=`git log --pretty=oneline | head -n 50 | fzf` && git reset --soft `echo ${HASH} | awk '{ print $1 }'`^
