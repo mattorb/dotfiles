@@ -22,7 +22,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 brew update && brew cleanup && brew cask cleanup
 
-brew tap fisherman/tap
 brew tap caskroom/cask
 
 brew install \
@@ -52,12 +51,12 @@ brew install \
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 
-# fisher for completions
+# fisher for completions. 3.2.7
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
-fish -c "fisher barnybug/docker-fish-completion"
-fish -c "fisher ansible-completion"
-fish -c "fisher jethrokuan/fzf"
-fish -c "fisher derphilipp/enter-docker-fzf"
+fish -c "fisher add barnybug/docker-fish-completion"
+fish -c "fisher add ansible-completion"
+fish -c "fisher add jethrokuan/fzf"
+fish -c "fisher add derphilipp/enter-docker-fzf"
 
 brew cask install \
     docker \
