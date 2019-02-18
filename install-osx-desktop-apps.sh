@@ -14,3 +14,4 @@ brew cask install \
     paw \
     slack \
     virtualbox \
+    spectacle
