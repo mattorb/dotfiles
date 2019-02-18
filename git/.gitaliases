@@ -78,7 +78,7 @@
 	short-recent = "for-each-ref --count=25 --sort=committerdate refs/heads/ --format='%(refname:short)'"
 
 # fuzzy add using fzf
-	fza = "!git ls-files -m -o --exclude-standard | fzf --print0 -m | xargs -0 -t -o git add --all"
+	fza = "!git ls-files -m -o --exclude-standard | fzf --print0 -m --preview 'git diff {}' --preview-window=top:10:wrap | xargs -0 -t -o git add --all"
 
 # fuzzy switch branch...  /fish/functions/fco.fish seems better
 	fco = "!git short-recent | fzf --print0 | xargs -0 -t git checkout"
