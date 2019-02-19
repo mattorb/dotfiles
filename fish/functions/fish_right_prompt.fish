@@ -1,10 +1,9 @@
 function fish_right_prompt -d "Write out the right prompt"
   set -l exit_code $status
-  
+  set -l is_git_repository 0 
+
   if command --search git >/dev/null do
-    set -l is_git_repository (git rev-parse --is-inside-work-tree ^/dev/null)
-  else
-    set -l is_git_repository 0
+    set is_git_repository (git rev-parse --is-inside-work-tree ^/dev/null)
   end
   
   # Print a yellow fork symbol when in a subshell
@@ -100,4 +99,3 @@ function fish_right_prompt -d "Write out the right prompt"
   date +"%T"
 
 end
-
