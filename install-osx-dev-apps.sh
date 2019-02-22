@@ -98,3 +98,4 @@ echo '12. Add cdto to finder toolbar:   Drag Applications/cd to.app onto the Fin
 echo '13. Configure ARQ'
 echo '14. Configure Carbon Copy cloner'
 echo '15. Launch Spectacle and enable accessibility access.  Then menubar->spectacle->Preferences->Launch at login'
+echo '16. Put a github token in ~/.fhub_token to enable the fhub repo navigation function.  Put additional orgs (to include their public repos) in ~/.fhub_orgs'
