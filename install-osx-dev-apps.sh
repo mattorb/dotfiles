@@ -79,6 +79,10 @@ git config --global core.pager "diff-so-fancy | less --tabs=1,5 -R"
 git config --global pull.rebase true
 git config --global rebase.autoStash true
 
+cd src/go
+./build.sh
+cd ../../
+
 echo '1. Execute this to add ssh key (w/passphrase) to keychain:  ssh-add -K ~/.ssh/id_rsa'
 echo '2. Then git config --global user.name "Your Name"'
 echo '3. Then git config --global user.email "Your_Email@...com"'
