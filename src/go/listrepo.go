@@ -9,8 +9,10 @@ import (
 	"golang.org/x/oauth2"
 )
 
-func printRepo(repo github.Repository) {
-	fmt.Println(*repo.FullName)
+func printRepos(repos []*github.Repository) {
+	for _, repo := range repos {
+		fmt.Println(*repo.FullName)
+	}
 }
 
 func initializeClient(token string) (context.Context, *github.Client) {
@@ -23,8 +25,6 @@ func initializeClient(token string) (context.Context, *github.Client) {
 }
 
 func listAllUserRepos(ctx context.Context, client *github.Client) {
-	var allRepos []*github.Repository
-
 	opt := &github.RepositoryListOptions{
 		ListOptions: github.ListOptions{PerPage: 100},
 		Visibility:  "all",
@@ -37,15 +37,12 @@ func listAllUserRepos(ctx context.Context, client *github.Client) {
 			return
 		}
 
-		allRepos = append(allRepos, repos...)
+		printRepos(repos)
+
 		if resp.NextPage == 0 {
 			break
 		}
 		opt.Page = resp.NextPage
-	}
-
-	for _, repo := range allRepos {
-		printRepo(*repo)
 	}
 }
 
@@ -63,9 +60,7 @@ func listOrganizationRepos(ctx context.Context, client *github.Client, organizat
 			return
 		}
 
-		for _, repo := range repos {
-			printRepo(*repo)
-		}
+		printRepos(repos)
 
 		if resp.NextPage == 0 {
 			break
@@ -82,5 +77,4 @@ func main() {
 	for _, org := range os.Args[2:] {
 		listOrganizationRepos(ctx, client, org)
 	}
-
 }
