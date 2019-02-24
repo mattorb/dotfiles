@@ -1,0 +1,31 @@
+Started with query:
+
+{
+  viewer {
+    repositories(first: 100) {
+      nodes {
+        nameWithOwner
+      }
+      pageInfo {
+        endCursor
+        startCursor
+        hasNextPage
+      }
+    }
+  }
+  organization(login: "github") {
+    repositories(first: 100) {
+      nodes {
+        nameWithOwner
+      }
+      pageInfo {
+        endCursor
+        startCursor
+        hasNextPage
+      }
+    }
+  }
+}
+
+
+built out through in https://developer.github.com/v4/explorer/
