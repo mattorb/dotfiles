@@ -79,7 +79,7 @@ git config --global core.pager "diff-so-fancy | less --tabs=1,5 -R"
 git config --global pull.rebase true
 git config --global rebase.autoStash true
 
-cd src/go
+cd src/listrepo
 ./build.sh
 cd ../../
 
