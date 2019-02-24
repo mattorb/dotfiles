@@ -10,7 +10,6 @@ import (
 )
 
 type repo struct {
-	Name          string
 	NameWithOwner string
 }
 
@@ -44,13 +43,15 @@ func buildParameters() map[string]interface{} {
 	}
 }
 
-func isDone(q reposQuery) bool {
-	return !q.Viewer.Repositories.PageInfo.HasNextPage && !q.Organization.Repositories.PageInfo.HasNextPage
-}
+func pageForward(q reposQuery, variables map[string]interface{}) bool {
+	if !q.Viewer.Repositories.PageInfo.HasNextPage && !q.Organization.Repositories.PageInfo.HasNextPage {
+		return false
+	}
 
-func pageForward(q reposQuery, variables map[string]interface{}) {
 	variables["repoCursor"] = githubv4.NewString(q.Viewer.Repositories.PageInfo.EndCursor)
 	variables["orgRepoCursor"] = githubv4.NewString(q.Organization.Repositories.PageInfo.EndCursor)
+
+	return true
 }
 
 func initializeV4Client(token string) *githubv4.Client {
@@ -71,12 +72,10 @@ func printReposFromThisPage(q reposQuery) {
 	}
 }
 
-func main() {
-	client := initializeV4Client(os.Args[1])
-
+func listAllRepos(client *githubv4.Client, extraOrg string) {
 	var q reposQuery
 	variables := buildParameters()
-	variables["orgName"] = githubv4.String(os.Args[2])
+	variables["orgName"] = githubv4.String(extraOrg)
 
 	for {
 		err := client.Query(context.Background(), &q, variables)
@@ -86,10 +85,14 @@ func main() {
 
 		printReposFromThisPage(q)
 
-		if isDone(q) {
+		if !pageForward(q, variables) {
 			break
 		}
-
-		pageForward(q, variables)
 	}
+}
+
+func main() {
+	client := initializeV4Client(os.Args[1])
+
+	listAllRepos(client, os.Args[2])
 }
