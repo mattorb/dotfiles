@@ -15,23 +15,22 @@ func printRepos(repos []*github.Repository) {
 	}
 }
 
-func initializeClient(token string) (context.Context, *github.Client) {
-	ctx := context.Background()
+func initializeClient(token string) *github.Client {
 	ts := oauth2.StaticTokenSource(
 		&oauth2.Token{AccessToken: token},
 	)
-	tc := oauth2.NewClient(ctx, ts)
-	return ctx, github.NewClient(tc)
+	tc := oauth2.NewClient(context.Background(), ts)
+	return github.NewClient(tc)
 }
 
-func listAllUserRepos(ctx context.Context, client *github.Client) {
+func listAllUserRepos(client *github.Client) {
 	opt := &github.RepositoryListOptions{
 		ListOptions: github.ListOptions{PerPage: 100},
 		Visibility:  "all",
 	}
 
 	for {
-		repos, resp, err := client.Repositories.List(ctx, "", opt)
+		repos, resp, err := client.Repositories.List(context.Background(), "", opt)
 		if err != nil {
 			fmt.Println(err)
 			return
@@ -46,7 +45,7 @@ func listAllUserRepos(ctx context.Context, client *github.Client) {
 	}
 }
 
-func listOrganizationRepos(ctx context.Context, client *github.Client, organization string) {
+func listOrganizationRepos(client *github.Client, organization string) {
 
 	opt := &github.RepositoryListByOrgOptions{
 		ListOptions: github.ListOptions{PerPage: 100},
@@ -54,7 +53,7 @@ func listOrganizationRepos(ctx context.Context, client *github.Client, organizat
 	}
 
 	for {
-		repos, resp, err := client.Repositories.ListByOrg(ctx, organization, opt)
+		repos, resp, err := client.Repositories.ListByOrg(context.Background(), organization, opt)
 		if err != nil {
 			fmt.Println(err)
 			return
@@ -70,11 +69,11 @@ func listOrganizationRepos(ctx context.Context, client *github.Client, organizat
 }
 
 func main() {
-	ctx, client := initializeClient(os.Args[1])
+	client := initializeClient(os.Args[1])
 
-	listAllUserRepos(ctx, client)
+	listAllUserRepos(client)
 
 	for _, org := range os.Args[2:] {
-		listOrganizationRepos(ctx, client, org)
+		listOrganizationRepos(client, org)
 	}
 }
