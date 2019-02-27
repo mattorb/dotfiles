@@ -12,7 +12,6 @@ function fhub -d 'Choose a repo to open github homepage for.  Put personal acces
     listrepo (cat $HOME/.fhub_token) $ADD_ORGS | fzf | read -l repo
 
     if test -n "$repo"
-        rm t
         echo "Opening '$repo' in Github"
         hub browse $repo
     end
