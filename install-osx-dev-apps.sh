@@ -15,7 +15,7 @@ if [[ $(brew --version) ]] ; then
     brew update
 else
     echo "Attempting to install Homebrew"
-    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
