@@ -20,7 +20,7 @@ fi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-brew update && brew cleanup && brew cask cleanup
+brew update; brew cask upgrade; brew cleanup
 
 brew tap caskroom/cask
 
