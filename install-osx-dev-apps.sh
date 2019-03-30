@@ -75,7 +75,7 @@ done
 # Equivalent of VS [gui] Command Palette  "Shell command: Install 'code' command in PATH"
 ln -sf /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code
 
-code --install-extension TeddyDD.fish
+code --install-extension lunaryorn.fish-ide
 code --install-extension PeterJausovec.vscode-docker
 code --install-extension haaaad.ansible
 
