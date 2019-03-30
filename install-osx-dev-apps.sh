@@ -61,8 +61,16 @@ fish -c "fisher add derphilipp/enter-docker-fzf"
 brew cask install \
     docker \
     java \
-    virtualbox \
     visual-studio-code 
+while ! brew cask install virtualbox; do
+    echo "open/reopen System Preferences → Security & Privacy → General and allow Oracle kernel addon"
+    read -p "Do you wish to resume install (y/n)?" yn
+    case $yn in
+        [Yy]* ) echo "restarting vbox install";;
+        [Nn]* ) exit;;
+        * ) echo "Please answer y or n.";;
+    esac
+done
 
 # Equivalent of VS [gui] Command Palette  "Shell command: Install 'code' command in PATH"
 ln -sf /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code
