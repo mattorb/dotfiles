@@ -13,5 +13,4 @@ brew cask install \
     nvalt \
     paw \
     slack \
-    virtualbox \
     spectacle
