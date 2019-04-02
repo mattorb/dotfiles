@@ -9,7 +9,7 @@ function fclone -d 'Choose a repo to to clone.  Put personal access token in $HO
         read -z ADD_ORGS < $HOME/.fhub_orgs
     end 
 
-    listrepo (cat $HOME/.fhub_token) $ADD_ORGS | fzf | read -l repo
+    listrepo_gql (cat $HOME/.fhub_token) $ADD_ORGS | fzf | read -l repo
 
     if test -n "$repo"
         echo "Cloning '$repo' from Github"
