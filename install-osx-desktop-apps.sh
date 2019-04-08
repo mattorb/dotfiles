@@ -14,4 +14,5 @@ brew cask install \
     paw \
     slack \
     virtualbox \
-    spectacle
+    spectacle \
+    wireshark
