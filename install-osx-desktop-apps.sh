@@ -15,4 +15,5 @@ brew cask install \
     slack \
     virtualbox \
     spectacle \
-    wireshark
+    wireshark \
+    keycastr  
