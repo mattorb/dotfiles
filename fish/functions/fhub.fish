@@ -9,10 +9,24 @@ function fhub -d 'Choose a repo to open github homepage for.  Put personal acces
         read -z ADD_ORGS < $HOME/.fhub_orgs
     end 
 
-    listrepo_gql (cat $HOME/.fhub_token) $ADD_ORGS | fzf | read -l repo
+    set TOKEN (cat $HOME/.fhub_token)
+    set ARG_SHA (echo $TOKEN $ADD_ORGS | shasum -a 512 | awk '{print $1}')
+    set CACHE ~/.fhub_repo_list_cache.txt-$ARG_SHA
+    set ITEMS (cat $CACHE 2>/dev/null| wc -l)
+
+    # Immediately send cache records to FZF, and kick off refreshing the cache via listrepo . . . piping that to FZF as we receive.
+    #  nauniq dedupes it for fzf.  It's critical that output from the first thing not wait on the second to start populating FZF UI, thus the custom fifo.
+    set FIFO (mktemp -ut tem)
+    rm -f $FIFO
+    mkfifo $FIFO
+    cat $CACHE 2>/dev/null > $FIFO &
+    listrepo_gql (cat $HOME/.fhub_token) $ADD_ORGS | tee $CACHE > $FIFO &
+    cat $FIFO | nauniq | fzf | read -l repo
 
     if test -n "$repo"
         echo "Opening '$repo' in Github"
         hub browse $repo
     end
+
+    rm $FIFO
 end
