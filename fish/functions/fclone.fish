@@ -28,7 +28,7 @@ function fclone -d 'Choose a repo to to clone.  Put personal access token in $HO
 
     if test -n "$repo"
         echo "Cloning '$repo' from Github"
-        git clone "https://github.com/$repo.git"
+        git clone "git@github.com:$repo.git"
     end
 
     rm $FIFO
