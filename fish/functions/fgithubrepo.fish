@@ -17,16 +17,20 @@ function fgithubrepo -d 'Present an fzf chooser for a github repo.  Put personal
     set TOKEN (cat $HOME/.fhub_token)
     set ARG_SHA (echo $TOKEN $ADD_ORGS | shasum -a 512 | awk '{print $1}')
     set CACHE ~/.fhub_repo_list_cache.txt-$ARG_SHA
-    set ITEMS (cat $CACHE 2>/dev/null| wc -l)
     
-    # Immediately send cached records to FZF, and kick off refreshing the cache via listrepo . . . piping that to FZF as we receive.
-    # nauniq dedupes it for fzf.  It's critical that output from the first thing not wait on the second to start populating FZF UI, 
-    # thus the custom fifo.
-    set FIFO (mktemp -ut tem)
-    rm -f $FIFO
+    # Create a queue to feed FZF with
+    set FIFO (mktemp -ut fgithubrepo_cache)
     mkfifo $FIFO
+
+    # Async feed persisted cache results to the fifo
     cat $CACHE 2>/dev/null > $FIFO &
+
+    # Async fetch repo list via github API
+    # Send results in parallel (tee) to:  1. Persisted cache. 2. queue (fifo)
     listrepo_gql (cat $HOME/.fhub_token) $ADD_ORGS | tee $CACHE > $FIFO &
+
+    # Feed the queue to fzf, de-duping (w/nauniq) since persisted cache is likely to have heavy overlap with realtime results 
+    #   if the cache was populated.
     cat $FIFO | nauniq | fzf | read -l repo
      
     # Serial example.  Gets stuck on waiting for both to finish before sending anything to fzf
