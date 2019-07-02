@@ -4,6 +4,7 @@ set -xg EDITOR (which code)
 function fish_user_key_bindings
     set -U FZF_LEGACY_KEYBINDINGS 0
     source $HOME/.config/fish/conf.d/fzf_key_bindings.fish
+    source $HOME/.config/fish/functions/keys_bindings.fish
 end
 
 set -x FZF_COMPLETE 1

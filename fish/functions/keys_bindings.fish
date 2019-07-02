@@ -1,0 +1,1 @@
+bind --preset $argv \ek 'begin; echo; keys; commandline -f repaint; end'
