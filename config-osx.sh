@@ -325,3 +325,7 @@ defaults import ~/Library/Preferences/com.apple.spaces.plist prefs/osx/spaces.pl
  done
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
+
+# Default Terminal Theme
+defaults write ~/Library/Preferences/com.apple.Terminal.plist "Default Window Settings" Homebrew
+/usr/libexec/PlistBuddy -c "Add :'Window Settings':Homebrew:useOptionAsMetaKey bool 1" ~/Library/Preferences/com.apple.Terminal.plist
