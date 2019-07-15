@@ -15,12 +15,12 @@ if [[ $(brew --version) ]] ; then
     brew update
 else
     echo "Attempting to install Homebrew"
-    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-brew update && brew cleanup && brew cask cleanup
+brew update; brew cask upgrade; brew cleanup
 
 brew tap caskroom/cask
 
@@ -45,7 +45,7 @@ brew install \
     Tenzer/tap/multitime \ 
     ripgrep
 
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
 # install fish shell
 brew install \
@@ -65,13 +65,21 @@ fish -c "fisher add derphilipp/enter-docker-fzf"
 brew cask install \
     docker \
     java \
-    virtualbox \
     visual-studio-code 
+while ! brew cask install virtualbox; do
+    echo "open/reopen System Preferences → Security & Privacy → General and allow Oracle kernel addon"
+    read -p "Do you wish to resume install (y/n)?" yn
+    case $yn in
+        [Yy]* ) echo "restarting vbox install";;
+        [Nn]* ) exit;;
+        * ) echo "Please answer y or n.";;
+    esac
+done
 
 # Equivalent of VS [gui] Command Palette  "Shell command: Install 'code' command in PATH"
 ln -sf /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code
 
-code --install-extension TeddyDD.fish
+code --install-extension lunaryorn.fish-ide
 code --install-extension PeterJausovec.vscode-docker
 code --install-extension haaaad.ansible
 
