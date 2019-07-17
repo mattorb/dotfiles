@@ -16,10 +16,9 @@ function keys -d "Help for bound keys"
     echo Alt-T\t Transpose last two words
     echo Alt-C\t Captialize current word
     echo Alt-U\t Uppercase current word
-    echo Alt-Up\t Search history for token at cursor     \(fish\)
     echo Option-Left\t Move cursor to next word
     echo Option-Right\t Move cursor to previous word
-    echo
+    echo Alt-L list contents of directory under cursor
 
     echo Character level
     echo --------------------------------------------------
@@ -32,6 +31,11 @@ function keys -d "Help for bound keys"
     echo Ctrl-Y\t Paste last killring entry
     echo Alt-Y\t Rotate back a killring entry
     echo
+
+    echo history
+    echo --------------------------------------------------
+    echo Alt-Shift-Left/Right On empty command line, navigate directory history
+    echo Alt-Up/Down\t Search history for token at cursor     \(fish\)
 
     echo fzf fish add-ons
     echo ---------------------------------------------------------
