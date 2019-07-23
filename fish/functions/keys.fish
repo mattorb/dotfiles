@@ -28,6 +28,7 @@ function keys -d "Help for bound keys"
     echo Alt-Y\t Rotate back a killring entry
     echo Alt-Shift-Left/Right\t On empty command line, navigate directory history
     echo Alt-Up/Down\t Search history for token at cursor     \(fish\)
+    echo Alt-#\t Comment out and send current line to history w/o executing
     echo
 
     echo fzf fish add-ons
