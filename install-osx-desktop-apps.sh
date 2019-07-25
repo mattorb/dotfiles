@@ -16,4 +16,9 @@ brew cask install \
     virtualbox \
     spectacle \
     wireshark \
-    keycastr  
+    keycastr \
+    karabiner-elements
+
+mkdir $HOME/.config/karabiner
+ln -sf $(pwd)/karabiner/karabiner.json $HOME/.config/karabiner/karabiner.json
+ln -sf $(pwd)/karabiner/cheatsheets $HOME/.config/karabiner/cheatsheets
