@@ -200,5 +200,5 @@
         "it.bloop.airmail2" = "F970F6D0-93B2-4EFC-A5E7-881C7277D3D5";
         "net.elasticthreads.nv" = AllSpaces;
     };
-    "spans-displays" = 0;
+    "spans-displays" = 1;
 }
