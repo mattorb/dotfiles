@@ -15,4 +15,4 @@ menuHammer:enter()
 --   hs.reload()
 -- end)
 
-hs.alert.show("Config loaded")
+-- hs.alert.show("Hammerspoon config loaded")
