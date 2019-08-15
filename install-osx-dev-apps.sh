@@ -66,6 +66,7 @@ brew cask install \
     docker \
     java \
     visual-studio-code 
+    
 while ! brew cask install virtualbox; do
     echo "open/reopen System Preferences → Security & Privacy → General and allow Oracle kernel addon"
     read -p "Do you wish to resume install (y/n)?" yn
@@ -113,3 +114,4 @@ echo '15. Launch Spectacle and enable accessibility access.  Then menubar->spect
 echo '16. Put a github token in ~/.fhub_token to enable the fhub repo navigation function.  Put additional orgs (to include their public repos) in ~/.fhub_orgs'
 echo '17. Open security preferences and grant access to Karabiner Elements for keyboard mapping'
 echo '18. Launch Karabiner Elements and answer any prompts to describe active keyboard type'
+echo '19. Launch Hammerspoon.  Set it to start on launch.   Enable Accessibility.'

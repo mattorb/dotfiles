@@ -1,0 +1,1 @@
+menuHammerMenuList.mainMenu.menuHotkey = {hyper, 'space'}

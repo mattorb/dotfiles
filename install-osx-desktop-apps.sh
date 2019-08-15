@@ -17,9 +17,15 @@ brew cask install \
     spectacle \
     wireshark \
     keycastr \
-    karabiner-elements
+    karabiner-elements \
+    hammerspoon
 
 # per Karabiner docs, need parent dir sym link, not json config sym link
 ln -sf $(pwd)/karabiner $HOME/.config
 # force reload after symlink creation
 launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
+
+ln -sf $(pwd)/hammerspoon $HOME/.hammerspoon
+
+osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Hammerspoon.app", hidden:true}' > /dev/null
+osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Karabiner-Elements.app", hidden:true}' > /dev/null
