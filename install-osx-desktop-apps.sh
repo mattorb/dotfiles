@@ -18,7 +18,8 @@ brew cask install \
     wireshark \
     keycastr \
     karabiner-elements \
-    hammerspoon
+    hammerspoon \ 
+    tunnelblick
 
 # per Karabiner docs, need parent dir sym link, not json config sym link
 ln -sf $(pwd)/karabiner $HOME/.config

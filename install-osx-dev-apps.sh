@@ -115,3 +115,4 @@ echo '16. Put a github token in ~/.fhub_token to enable the fhub repo navigation
 echo '17. Open security preferences and grant access to Karabiner Elements for keyboard mapping'
 echo '18. Launch Karabiner Elements and answer any prompts to describe active keyboard type'
 echo '19. Launch Hammerspoon.  Set it to start on launch.   Enable Accessibility.'
+echo '20. Configure Tunnelblick VPN.'
