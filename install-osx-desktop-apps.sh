@@ -28,5 +28,8 @@ launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_ser
 
 ln -sf $(pwd)/hammerspoon $HOME/.hammerspoon
 
+# Yah . . . this works, svn download a sub-dir of a github repo to a dest dir
+svn export https://github.com/mattorb/keyboard/branches/customizations/hammerspoon hammerspoon/keyboard
+
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Hammerspoon.app", hidden:true}' > /dev/null
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Karabiner-Elements.app", hidden:true}' > /dev/null
