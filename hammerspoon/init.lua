@@ -16,3 +16,5 @@ menuHammer:enter()
 -- end)
 
 -- hs.alert.show("Hammerspoon config loaded")
+
+require('keyboard')
