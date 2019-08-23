@@ -8,6 +8,10 @@ spoon.SpoonInstall:installSpoonFromZipURL('https://github.com/mattorb/MenuHammer
 menuHammer = hs.loadSpoon("MenuHammer")
 menuHammer:enter()
 
+spoon.SpoonInstall:installSpoonFromRepo("Emojis")
+emojis = hs.loadSpoon('Emojis')
+emojis:bindHotkeys({toggle={hyper, 'e'}})
+
 --
 -- Useful when testing changes: reload hammerspoon config
 --
