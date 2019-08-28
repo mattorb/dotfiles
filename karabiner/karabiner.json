@@ -62,8 +62,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_shift",
+                                        "key_code": "right_option",
                                         "modifiers": [
+                                            "left_shift",
                                             "left_command",
                                             "left_control",
                                             "left_option",
@@ -136,9 +137,6 @@
                                             "left_command",
                                             "left_control",
                                             "left_option"
-                                        ],
-                                        "optional": [
-                                            "any"
                                         ]
                                     }
                                 },
@@ -243,11 +241,16 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Right_option-K for spectacle cheatsheet",
+                                "description": "Hyper2 (right option) to spectacle cheatsheet",
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
+                                            "fn",
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift",
                                             "right_option"
                                         ]
                                     }
