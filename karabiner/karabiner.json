@@ -16,6 +16,38 @@
                 },
                 "rules": [
                     {
+                        "description": "Change right command to hyper",
+                        "manipulators": [
+                            {
+                                "description": "Right_option to hyper",
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Change Hyper + H/J/K/L to Arrow Keys",
                         "manipulators": [
                             {
@@ -327,16 +359,7 @@
                 "delay_milliseconds_before_open_device": 1000
             },
             "selected": true, 
-            "simple_modifications": [
-                {
-                    "from": {
-                        "key_code": "right_command"
-                    },
-                    "to": {
-                        "key_code": "left_control"
-                    }
-                }
-            ],
+            "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
                 "mouse_key_xy_scale": 100
