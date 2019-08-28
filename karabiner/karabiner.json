@@ -48,6 +48,39 @@
                         ]
                     },
                     {
+                        "description": "Change right alt to hyper 2",
+                        "manipulators": [
+                            {
+                                "description": "Right_option to hyper",
+                                "from": {
+                                    "key_code": "right_option",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "fn"
+                                        ]
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Change Hyper + H/J/K/L to Arrow Keys",
                         "manipulators": [
                             {
