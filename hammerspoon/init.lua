@@ -22,3 +22,9 @@ emojis:bindHotkeys({toggle={hyper, 'e'}})
 -- hs.alert.show("Hammerspoon config loaded")
 
 require('keyboard')
+
+-- working around some new os x nuance where this preference is not successfully preserved in the plist
+--  after a relaunch of hammerspoonf
+if hs.dockicon.visible() then
+    hs.dockicon.hide()
+end
