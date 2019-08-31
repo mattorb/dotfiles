@@ -70,7 +70,7 @@ menuHammerMenuList = {
     ------------------------------------------------------------------------------------------------
     applicationMenu = {
         parentMenu = mainMenu,
-        menuHotkey = {{'cmd', 'alt', 'ctrl'}, 'a'},
+        menuHotkey = {hyper, 'a'},
         menuItems = {
             {cons.cat.action, '', 'C', "Chrome", {
                 {cons.act.launcher, 'Google Chrome'}
