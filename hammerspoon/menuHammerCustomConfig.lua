@@ -140,24 +140,9 @@ menuHammerMenuList = {
             {cons.cat.action, '', 'F', "Firefox", {
                 {cons.act.launcher, 'Firefox'}
             }},
-            {cons.cat.action, '', 'M', 'Movie Lookup',
-             {
-                 {cons.act.userinput,
-                  "movieLookup",
-                  "Movie Lookup",
-                  "Enter search criteria"},
-                 {cons.act.openurl,
-                  "http://www.google.com/search?q=@@movieLookup@@%20film%20site:wikipedia.org&meta=&btnI"
-                 },
-                 {cons.act.openurl,
-                  "http://www.google.com/search?q=@@movieLookup@@%20site:imdb.com&meta=&btnI"
-                 },
-                 {cons.act.openurl,
-                  "http://www.google.com/search?q=@@movieLookup@@%20site:rottentomatoes.com&meta=&btnI"
-                 },
-            }},
-            {cons.cat.action, '', 'S', "Safari", {
-                {cons.act.launcher, 'Safari'}
+           {cons.cat.action, '', 'S', "Safari", {
+               {cons.act.launcher, 'Safari'}
+           }},
             }},
         }
     },
