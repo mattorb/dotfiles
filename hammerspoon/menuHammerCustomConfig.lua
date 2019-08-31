@@ -156,6 +156,10 @@ menuHammerMenuList = {
            {cons.cat.action, '', 'S', "Safari", {
                {cons.act.launcher, 'Safari'}
            }},
+           {cons.cat.action, '', 'T', 'Copy Safari tab urls to Clipboard', {
+            {
+                cons.act.script, 
+                "~/bin/safari_urls.osascript"},
             }},
         }
     },
