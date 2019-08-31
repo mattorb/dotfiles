@@ -140,6 +140,19 @@ menuHammerMenuList = {
             {cons.cat.action, '', 'F', "Firefox", {
                 {cons.act.launcher, 'Firefox'}
             }},
+            {cons.cat.action, '', 'G', 'Google',
+            {
+                {cons.act.userinput,
+                 "query",
+                 "Google Search",
+                 "Enter search criteria"},
+                {cons.act.openurl,
+                 "http://www.google.com/search?q=@@query@@"
+                },
+                {cons.act.openurl,
+                "http://www.google.com/search?q=@@query@@&meta=&btnI"
+               },
+           }},
            {cons.cat.action, '', 'S', "Safari", {
                {cons.act.launcher, 'Safari'}
            }},
