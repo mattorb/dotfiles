@@ -168,7 +168,7 @@ menuHammerMenuList = {
     ------------------------------------------------------------------------------------------------
     finderMenu = {
         parentMenu = mainMenu,
-        menuHotkey = nil,
+        menuHotkey = {hyper, 'f'},
         menuItems = {
             {cons.cat.action, '', 'D', 'Desktop', {
                 {cons.act.launcher, 'Finder'},
