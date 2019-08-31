@@ -132,7 +132,7 @@ menuHammerMenuList = {
     ------------------------------------------------------------------------------------------------
     browserMenu = {
         parentMenu = mainMenu,
-        meunHotkey = nil,
+        menuHotkey = nil,
         menuItems = {
             {cons.cat.action, '', 'C', "Chrome", {
                 {cons.act.launcher, 'Google Chrome'}
