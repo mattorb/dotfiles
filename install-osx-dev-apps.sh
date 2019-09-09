@@ -92,6 +92,16 @@ git config --global core.pager "diff-so-fancy | less --tabs=1,5 -R"
 git config --global pull.rebase true
 git config --global rebase.autoStash true
 
+git config --global difftool.prompt false
+git config --global merge.tool p4mergetool
+git config --global mergetool.p4mergetool.cmd "/usr/local/bin/p4merge \$PWD/\$BASE \$PWD/\$LOCAL \$PWD/\$REMOTE \$PWD/\$MERGED"
+git config --global mergetool.p4mergetool.trustExitCode false
+git config --global mergetool.keepBackup false
+
+git config --global diff.tool p4mergetool
+git config --global difftool.p4mergetool.cmd "/usr/local/bin/p4merge \$LOCAL \$REMOTE"
+git config --global difftool.p4mergetool.prompt false
+
 cd src/listrepo
 ./build.sh
 cd ../../

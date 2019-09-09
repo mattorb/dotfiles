@@ -19,7 +19,8 @@ brew cask install \
     keycastr \
     karabiner-elements \
     hammerspoon \ 
-    tunnelblick
+    tunnelblick \
+    p4v
 
 # per Karabiner docs, need parent dir sym link, not json config sym link
 ln -sf $(pwd)/karabiner $HOME/.config
