@@ -23,8 +23,9 @@ brew cask install \
 
 # per Karabiner docs, need parent dir sym link, not json config sym link
 ln -sf $(pwd)/karabiner $HOME/.config
+
 # force reload after symlink creation
-launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
+launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server || echo Skip Likely running at a Github Action
 
 ln -sf $(pwd)/hammerspoon $HOME/.hammerspoon
 
