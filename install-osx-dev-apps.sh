@@ -56,7 +56,12 @@ brew "bash"
 EOS
 
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-sudo -v
+
+echo TTY IS:
+tty
+echo TTY END
+
+sudo -v || echo Prompt for pass or keep going (Github Action mode)
 sudo chsh -s /usr/local/bin/fish $(whoami)
 
 # fisher for completions. 3.2.7
