@@ -37,12 +37,12 @@ brew install \
     diff-so-fancy \
     packer \
     terraform \
-    vault \ 
+    vault \
     fzf \
     parallel \
-    telnet \ 
+    telnet \
     netcat \
-    Tenzer/tap/multitime \ 
+    Tenzer/tap/multitime \
     ripgrep
 
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
