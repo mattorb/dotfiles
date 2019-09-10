@@ -25,15 +25,15 @@ brew cask install \
 ln -sf $(pwd)/karabiner $HOME/.config
 
 # force reload after symlink creation
-launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server || echo Skip Likely running at a Github Action
+launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server || echo Skip Likely running as a Github Action
 
 ln -sf $(pwd)/hammerspoon $HOME/.hammerspoon
 
 # Yah . . . this works, svn download a sub-dir of a github repo to a dest dir
 svn export https://github.com/mattorb/keyboard/branches/customizations/hammerspoon hammerspoon/keyboard
 
-osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Hammerspoon.app", hidden:true}' > /dev/null
-osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Karabiner-Elements.app", hidden:true}' > /dev/null
+osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Hammerspoon.app", hidden:true}' > /dev/null || echo Skip Likely running as a Github Action
+osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Karabiner-Elements.app", hidden:true}' > /dev/null || echo Skip Likely running as a Github Action
 
 # Turn off Hammerspoon dock icon
 defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool FALSE
