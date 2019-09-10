@@ -18,7 +18,7 @@ brew cask install \
     wireshark \
     keycastr \
     karabiner-elements \
-    hammerspoon \ 
+    hammerspoon \
     tunnelblick \
     p4v
 
