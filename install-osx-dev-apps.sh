@@ -90,7 +90,7 @@ set -e
 ln -sf /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code
 
 code --install-extension lunaryorn.fish-ide
-code --install-extension PeterJausovec.vscode-docker
+code --install-extension ms-azuretools.vscode-docker 
 code --install-extension haaaad.ansible
 
 ln -sf $(pwd)/prefs/osx/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
