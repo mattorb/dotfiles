@@ -1,12 +1,14 @@
 name: CI
 
-on: [push]
-
+on:
+  push:
+    paths: '*'
+  schedule:
+    # once a week at noon
+    - cron: '0 12 * * */3'  
 jobs:
   build:
-
     runs-on: macOS-latest
-    
     steps:
     - uses: actions/checkout@v1
     - name: Run a multi-line script
