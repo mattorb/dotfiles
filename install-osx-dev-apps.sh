@@ -56,7 +56,7 @@ brew "bash"
 EOS
 
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-sudo -v || echo Prompt for pass or keep going (Github Action mode)
+sudo -v || echo Prompt for pass or keep going -- likely running at a Github Action
 sudo chsh -s /usr/local/bin/fish $(whoami)
 
 # fisher for completions. 3.2.7
