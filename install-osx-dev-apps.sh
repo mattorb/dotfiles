@@ -24,33 +24,36 @@ brew update; brew cask upgrade; brew cleanup
 
 brew tap caskroom/cask
 
-brew install \
-    git \
-    ruby \
-    go \
-    python \
-    jq \
-    ansible \
-    awscli \
-    csshX \
-    hub \
-    diff-so-fancy \
-    packer \
-    terraform \
-    vault \
-    fzf \
-    parallel \
-    telnet \
-    netcat \
-    Tenzer/tap/multitime \
-    ripgrep
+brew bundle --file=- <<-EOS
+brew "git"
+brew "ruby"
+brew "go"
+brew "python"
+brew "jq"
+brew "ansible"
+brew "awscli"
+brew "csshX"
+brew "hub"
+brew "diff-so-fancy"
+brew "packer"
+brew "terraform"
+brew "vault"
+brew "fzf"
+brew "parallel"
+brew "telnet"
+brew "netcat"
+brew "Tenzer/tap/multitime"
+brew "ripgrep"
+EOS
+
 
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
 # install fish shell
-brew install \
-    fish \
-    bash
+brew bundle --file=- <<-EOS
+brew "fish"
+brew "bash"
+EOS
 
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
