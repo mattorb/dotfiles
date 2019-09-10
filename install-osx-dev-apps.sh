@@ -22,38 +22,42 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 brew update; brew cask upgrade; brew cleanup
 
-brew tap caskroom/cask
+brew bundle --file=- <<-EOS
+tap "tenzer/tap"
+tap "caskroom/cask"
+brew "git"
+brew "ruby"
+brew "go"
+brew "python"
+brew "jq"
+brew "ansible"
+brew "awscli"
+brew "csshX"
+brew "hub"
+brew "diff-so-fancy"
+brew "packer"
+brew "terraform"
+brew "vault"
+brew "fzf"
+brew "parallel"
+brew "telnet"
+brew "netcat"
+brew "Tenzer/tap/multitime"
+brew "ripgrep"
+EOS
 
-brew install \
-    git \
-    ruby \
-    go \
-    python \
-    jq \
-    ansible \
-    awscli \
-    csshX \
-    hub \
-    diff-so-fancy \
-    packer \
-    terraform \
-    vault \ 
-    fzf \
-    parallel \
-    telnet \ 
-    netcat \
-    Tenzer/tap/multitime \ 
-    ripgrep
 
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
 # install fish shell
-brew install \
-    fish \
-    bash
+brew bundle --file=- <<-EOS
+brew "fish"
+brew "bash"
+EOS
 
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/fish
+[ -z "$GITHUB_ACTION" ] && sudo -v
+sudo chsh -s /usr/local/bin/fish $(whoami)
 
 # fisher for completions. 3.2.7
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
@@ -66,22 +70,27 @@ brew cask install \
     docker \
     java \
     visual-studio-code 
-    
-while ! brew cask install virtualbox; do
+
+set +e # give virtualbox install a pass on github action CI   Fails for becaues the security panel is not openable from CI    
+
+if [[ $(brew cask install virtualbox) ]] ; then
+    echo VirtualBox installed.
+else
+    echo VirtualBox install second attempt. 
     echo "open/reopen System Preferences → Security & Privacy → General and allow Oracle kernel addon"
     read -p "Do you wish to resume install (y/n)?" yn
-    case $yn in
-        [Yy]* ) echo "restarting vbox install";;
-        [Nn]* ) exit;;
-        * ) echo "Please answer y or n.";;
-    esac
-done
+
+    echo "Attempting to install virtualbox"
+    brew cask install virtualbox
+fi
+
+set -e
 
 # Equivalent of VS [gui] Command Palette  "Shell command: Install 'code' command in PATH"
 ln -sf /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code
 
 code --install-extension lunaryorn.fish-ide
-code --install-extension PeterJausovec.vscode-docker
+code --install-extension ms-azuretools.vscode-docker 
 code --install-extension haaaad.ansible
 
 ln -sf $(pwd)/prefs/osx/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
