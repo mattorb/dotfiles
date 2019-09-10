@@ -72,15 +72,18 @@ brew cask install \
     visual-studio-code 
 
 set +e # give virtualbox install a pass on github action CI   Fails for becaues the security panel is not openable from CI    
-while ! brew cask install virtualbox; do
+
+if [[ $(brew cask install virtualbox) ]] ; then
+    echo VirtualBox installed.
+else
+    echo VirtualBox install second attempt. 
     echo "open/reopen System Preferences → Security & Privacy → General and allow Oracle kernel addon"
     read -p "Do you wish to resume install (y/n)?" yn
-    case $yn in
-        [Yy]* ) echo "restarting vbox install";;
-        [Nn]* ) exit;;
-        * ) echo "Please answer y or n.";;
-    esac
-done
+
+    echo "Attempting to install virtualbox"
+    brew cask install virtualbox
+fi
+
 set -e
 
 # Equivalent of VS [gui] Command Palette  "Shell command: Install 'code' command in PATH"
