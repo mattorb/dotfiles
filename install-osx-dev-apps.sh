@@ -56,11 +56,6 @@ brew "bash"
 EOS
 
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-
-echo TTY IS:
-tty
-echo TTY END
-
 sudo -v || echo Prompt for pass or keep going (Github Action mode)
 sudo chsh -s /usr/local/bin/fish $(whoami)
 
