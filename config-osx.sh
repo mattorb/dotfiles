@@ -324,8 +324,25 @@ defaults import ~/Library/Preferences/com.apple.spaces.plist prefs/osx/spaces.pl
  	killall "${app}" > /dev/null 2>&1
  done
 
-echo "Done. Note that some of these changes require a logout/restart to take effect."
-
 # Default Terminal Theme
 defaults write ~/Library/Preferences/com.apple.Terminal.plist "Default Window Settings" Homebrew
 /usr/libexec/PlistBuddy -c "Add :'Window Settings':Homebrew:useOptionAsMetaKey bool 1" ~/Library/Preferences/com.apple.Terminal.plist
+
+###############################################################################
+# Touchbar	                                                                  #
+###############################################################################
+
+# Always show expanded control strip in Touchbar (brightness/volume/media/etc)
+set presentationModeProperties "<dict><key>fullControlStrip</key><string>fullControlStrip</string></dict>"
+defaults write com.apple.touchbar.agent PresentationModeGlobal fullControlStrip
+defaults write com.apple.touchbar.agent PresentationModeFnModes $presentationModeProperties
+killAll ControlStrip
+
+# Always show Function keys in Touchbar
+# set presentationModeProperties "<dict><key>functionKeys</key><string>functionKeys</string><key>fullControlStrip</key><string>functionKeys</string></dict>"
+# defaults write com.apple.touchbar.agent PresentationModeGlobal functionKeys
+# defaults write com.apple.touchbar.agent PresentationModeFnModes $presentationModeProperties
+# killAll ControlStrip
+
+echo "Done. Note that some of these changes require a logout/restart to take effect."
+
