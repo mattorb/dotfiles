@@ -9,6 +9,11 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: Run a multi-line script
-      run: |
-        ./setup.sh
+    - name: Execute full install
+      run:  ./setup.sh
+    - name: Record installed brew package versions to CI log
+      run: brew list --versions
+    - name: Record installed Casks to CI log
+      run: brew cask list --versions
+        
+        
