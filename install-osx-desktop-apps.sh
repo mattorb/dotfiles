@@ -34,6 +34,7 @@ svn export https://github.com/mattorb/keyboard/branches/customizations/hammerspo
 
 [ -z "$GITHUB_ACTION" ] && osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Hammerspoon.app", hidden:true}' > /dev/null
 [ -z "$GITHUB_ACTION" ] && osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Karabiner-Elements.app", hidden:true}' > /dev/null
+[ -z "$GITHUB_ACTION" ] && osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/nvALT.app", hidden:true}' > /dev/null
 
 # Turn off Hammerspoon dock icon
 defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool FALSE
