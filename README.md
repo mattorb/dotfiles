@@ -14,8 +14,6 @@ or w/o git:
 curl -sL https://github.com/mattorb/dotfiles/archive/master.tar.gz | tar xz && cd dotfiles-master && ./setup.sh
 ```
 
-Then follow the directions for manual steps that are printed.
-
 # Highlights
 This is not an exhaustive list of what is here, but it covers some of the more interesting things.  For instance, numerous desktop and commandline tools are installed which are not mentioned below.
 
@@ -33,8 +31,9 @@ With the left hand, press and hold <kbd>s</kbd>+<kbd>d</kbd> to enter super dupe
 
 This is mostly following what Jason implemented [here](https://github.com/jasonrudolph/keyboard/), so please refer to that for more explanation and detail.  There are a few other useful key combos that come with super duper mode (like tab navigation).  My fork and modifications live [here](https://github.com/mattorb/keyboard).
 
+## Ah Fudge Mode
 I added an <kbd>a</kbd>h <kbd>f</kbd>udge mode analagous to super duper, but which maps <kbd>h</kbd>,<kbd>j</kbd>,<kbd>k</kbd>, or <kbd>l</kbd> to
-<kbd>home</kbd>, <kbd>pgdn</kbd>, <kbd>pgup</kbd>, and <kbd>end</kbd>.
+<kbd>home</kbd>, <kbd>pgdn</kbd>, <kbd>pgup</kbd>, and <kbd>end</kbd>.   <kbd>i</kbd> switches to previous window, <kbd>o</kbd> switches to next window.
 
 The cursor movement/navigation part of this is especially useful on a laptop keyboard, but also generally better for keeping your hands on the home row.  Some of the reasoning and thought behind what I adopted can be found [here](https://mattorb.com/level-up-shortcuts-hammerspoon-home-row/).
 
