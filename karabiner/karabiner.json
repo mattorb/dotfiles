@@ -82,6 +82,37 @@
                         ]
                     },
                     {
+                        "description": "Change Hyper + M to Ctrl-F2 (activate application menu)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift",
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "modifiers" : [
+                                            "left_control",
+                                            "fn"
+                                        ],
+                                        "key_code": "f2"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Change Hyper + H/J/K/L to Arrow Keys",
                         "manipulators": [
                             {
