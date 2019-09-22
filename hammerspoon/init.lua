@@ -10,6 +10,10 @@ menuHammer:enter()
 
 spoon.SpoonInstall:updateRepo('default')
 spoon.SpoonInstall:installSpoonFromRepo('Emojis')
+spoon.SpoonInstall:installSpoonFromRepo('KSheet')
+
+sheet = hs.loadSpoon('KSheet')
+sheet:bindHotkeys({toggle={hyper, 'p'}})
 emojis = hs.loadSpoon('Emojis')
 emojis:bindHotkeys({toggle={hyper, 'e'}})
 
