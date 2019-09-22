@@ -15,6 +15,7 @@ spoon.SpoonInstall:installSpoonFromRepo('KSheet')
 sheet = hs.loadSpoon('KSheet')
 sheet:bindHotkeys({toggle={hyper, 'p'}})
 emojis = hs.loadSpoon('Emojis')
+emojis.chooser:rows(15)
 emojis:bindHotkeys({toggle={hyper, 'e'}})
 
 --
