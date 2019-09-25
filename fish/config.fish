@@ -1,5 +1,5 @@
 set -xg PATH $HOME/bin $PATH
-set -xg EDITOR (which code)
+set -xg EDITOR (which code) -w
 
 function fish_user_key_bindings
     set -U FZF_LEGACY_KEYBINDINGS 0
