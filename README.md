@@ -1,5 +1,5 @@
 # Matt's dot files
-OS X, Linux, Fish, VS Code, Karabiner, Hammerspoon, git aliases, git helpers (fclone/fhub) 
+OS X, Fish, VS Code, Karabiner, Hammerspoon, git aliases, git helpers (fclone/fhub).
 
 Goals/etc here: https://mattorb.com/dotfiles/
 
@@ -21,26 +21,6 @@ This is not an exhaustive list of what is here, but it covers some of the more i
 Using [Karabiner](https://pqrs.org/osx/karabiner/), we redefine the <kbd>right-command</kbd> key to be a new meta key, called the <kbd>hyper</kbd> key.   
 
 We also map the press and hold of the <kbd>hyper</kbd> key to <kbd>command</kbd>+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>shift</kbd>. We leverage that for defining new global keyboard shortcuts because it has a very low chance of having application level key binding conflicts, so it is a clean slate of slots to bind behaviors on.
-
-## Super Duper mode
--- courtesy of [JR](https://github.com/jasonrudolph/keyboard/)
-
-Using [Hammerspoon](https://www.hammerspoon.org), we enable the simultaneous press of <kbd>s</kbd>+<kbd>d</kbd> to activate a mode which temporarily changes the function of other keys on the home row.
-
-With the left hand, press and hold <kbd>s</kbd>+<kbd>d</kbd> to enter super duper mode.  Then use the right hand to press <kbd>h</kbd>,<kbd>j</kbd>,<kbd>k</kbd>, or <kbd>l</kbd> for moving the cursor left, down, up, or right.  Additionally, you can add <kbd>a</kbd> for <kbd>alt</kbd>, <kbd>f</kbd> of <kbd>command</kbd>, and <kbd>space</kbd> for <kbd>shift</kbd> using the left hand.
-
-This is mostly following what Jason implemented [here](https://github.com/jasonrudolph/keyboard/), so please refer to that for more explanation and detail.  There are a few other useful key combos that come with super duper mode (like tab navigation with <kbd>i</kbd> and <kbd>o</kbd> for instance).
-
-My [fork](https://github.com/mattorb/keyboard) introduces the following key changes from the original:
-1. In super duper mode, emit 'nudging' mousewheel events with <kbd>n</kbd>,<kbd>m</kbd>,<kbd>.</kbd>.
-2. In super duper mode, activate application menu with <kbd>g</kbd>
-3. Adds 'Ah fudge' mode.    
-
-## Ah Fudge Mode
-I added an <kbd>a</kbd>h <kbd>f</kbd>udge mode analagous to super duper, but which maps <kbd>h</kbd>,<kbd>j</kbd>,<kbd>k</kbd>, or <kbd>l</kbd> to
-<kbd>home</kbd>, <kbd>pgdn</kbd>, <kbd>pgup</kbd>, and <kbd>end</kbd>.   <kbd>i</kbd> switches to previous window, <kbd>o</kbd> switches to next window.
-
-The cursor movement/navigation part of this is especially useful on a laptop keyboard, but also generally better for keeping your hands on the home row.  Some of the reasoning and thought behind what I adopted can be found [here](https://mattorb.com/level-up-shortcuts-hammerspoon-home-row/).
 
 ## MenuHammer and Launching Applications
 Using [MenuHammer](https://github.com/FryJay/MenuHammer) enables a custom menu accessible from anywhere via <kbd>hyper</kbd>+<kbd>space</kbd>.   Many helpful actions, such as toggling wi-fi, executing a favorite script, or launching an application are only an alpha keypress or two away.
@@ -71,8 +51,28 @@ It pops up a cheatsheet of window resize/move commands, re-using <kbd>h</kbd>,<k
 ## Spaces and Full Screen Applications
 I despise full screen *mode* for apps on OS X, but I love giving something the real estate and focus of occupying most/all of the screen . . . so what I am trying at the moment is binding certain apps to their own dedicated spaces and maximizing their windows by default.  i.e. - Slack and VS Code always execute with the window sized to the entire screen, but _not_ in *full screen mode*, in its own space.  This required some custom plist juggling.  See [here](prefs/osx/spaces.plist) for what is currently set up.
 
+## Super Duper mode
+-- courtesy of [JR](https://github.com/jasonrudolph/keyboard/)
 
-## Application level key helpers
+Using [Hammerspoon](https://www.hammerspoon.org), we enable the simultaneous press of <kbd>s</kbd>+<kbd>d</kbd> to activate a mode which temporarily changes the function of other keys on the home row.
+
+With the left hand, press and hold <kbd>s</kbd>+<kbd>d</kbd> to enter super duper mode.  Then use the right hand to press <kbd>h</kbd>,<kbd>j</kbd>,<kbd>k</kbd>, or <kbd>l</kbd> for moving the cursor left, down, up, or right.  Additionally, you can add <kbd>a</kbd> for <kbd>alt</kbd>, <kbd>f</kbd> of <kbd>command</kbd>, and <kbd>space</kbd> for <kbd>shift</kbd> using the left hand.
+
+This is mostly following what Jason implemented [here](https://github.com/jasonrudolph/keyboard/), so please refer to that for more explanation and detail.  There are a few other useful key combos that come with super duper mode (like tab navigation with <kbd>i</kbd> and <kbd>o</kbd> for instance).
+
+My [fork](https://github.com/mattorb/keyboard) introduces the following key changes from the original:
+1. In super duper mode, emit 'nudging' mousewheel events with <kbd>n</kbd>,<kbd>m</kbd>,<kbd>.</kbd>.
+2. In super duper mode, activate application menu with <kbd>g</kbd>
+3. Adds 'Ah fudge' mode.    
+
+## Ah Fudge Mode
+I added an <kbd>a</kbd>h <kbd>f</kbd>udge mode analagous to super duper, but which maps <kbd>h</kbd>,<kbd>j</kbd>,<kbd>k</kbd>, or <kbd>l</kbd> to
+<kbd>home</kbd>, <kbd>pgdn</kbd>, <kbd>pgup</kbd>, and <kbd>end</kbd>.   <kbd>i</kbd> switches to previous window, <kbd>o</kbd> switches to next window.
+
+The cursor movement/navigation part of this is especially useful on a laptop keyboard, but also generally better for keeping your hands on the home row.  Some of the reasoning and thought behind what I adopted can be found [here](https://mattorb.com/level-up-shortcuts-hammerspoon-home-row/).
+
+## Application level keyboard shortcut helpers
+
 <kbd>hyper</kbd>+<kbd>o</kbd> to autocomplete search menu items in the current application
 
 <kbd>hyper</kbd>+<kbd>p</kbd> for a cheatsheet of all menu items and their shortcut keys  (courtesy of KSheet hammerspoon spoon)
