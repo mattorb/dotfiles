@@ -29,7 +29,12 @@ Using [Hammerspoon](https://www.hammerspoon.org), we enable the simultaneous pre
 
 With the left hand, press and hold <kbd>s</kbd>+<kbd>d</kbd> to enter super duper mode.  Then use the right hand to press <kbd>h</kbd>,<kbd>j</kbd>,<kbd>k</kbd>, or <kbd>l</kbd> for moving the cursor left, down, up, or right.  Additionally, you can add <kbd>a</kbd> for <kbd>alt</kbd>, <kbd>f</kbd> of <kbd>command</kbd>, and <kbd>space</kbd> for <kbd>shift</kbd> using the left hand.
 
-This is mostly following what Jason implemented [here](https://github.com/jasonrudolph/keyboard/), so please refer to that for more explanation and detail.  There are a few other useful key combos that come with super duper mode (like tab navigation).  My fork and modifications live [here](https://github.com/mattorb/keyboard).
+This is mostly following what Jason implemented [here](https://github.com/jasonrudolph/keyboard/), so please refer to that for more explanation and detail.  There are a few other useful key combos that come with super duper mode (like tab navigation with <kbd>i</kbd> and <kbd>o</kbd> for instance).
+
+My [fork](https://github.com/mattorb/keyboard) introduces the following key changes from the original:
+1. In super duper mode, emit 'nudging' mousewheel events with <kbd>n</kbd>,<kbd>m</kbd>,<kbd>.</kbd>.
+2. In super duper mode, activate application menu with <kbd>g</kbd>
+3. Adds 'Ah fudge' mode.    
 
 ## Ah Fudge Mode
 I added an <kbd>a</kbd>h <kbd>f</kbd>udge mode analagous to super duper, but which maps <kbd>h</kbd>,<kbd>j</kbd>,<kbd>k</kbd>, or <kbd>l</kbd> to
@@ -65,6 +70,14 @@ It pops up a cheatsheet of window resize/move commands, re-using <kbd>h</kbd>,<k
 
 ## Spaces and Full Screen Applications
 I despise full screen *mode* for apps on OS X, but I love giving something the real estate and focus of occupying most/all of the screen . . . so what I am trying at the moment is binding certain apps to their own dedicated spaces and maximizing their windows by default.  i.e. - Slack and VS Code always execute with the window sized to the entire screen, but _not_ in *full screen mode*, in its own space.  This required some custom plist juggling.  See [here](prefs/osx/spaces.plist) for what is currently set up.
+
+
+## Application level key helpers
+<kbd>hyper</kbd>+<kbd>o</kbd> to autocomplete search menu items in the current application
+
+<kbd>hyper</kbd>+<kbd>p</kbd> for a cheatsheet of all menu items and their shortcut keys  (courtesy of KSheet hammerspoon spoon)
+
+Key help in the shell (see below)
 
 ## Shell Enhancements
 [Fish](https://www.fishshell.com) is my shell of choice for its clean and thoughtful syntax.
