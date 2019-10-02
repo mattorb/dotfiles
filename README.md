@@ -61,7 +61,7 @@ With the left hand, press and hold <kbd>s</kbd>+<kbd>d</kbd> to enter super dupe
 This is mostly following what Jason implemented [here](https://github.com/jasonrudolph/keyboard/), so please refer to that for more explanation and detail.  There are a few other useful key combos that come with super duper mode (like tab navigation with <kbd>i</kbd> and <kbd>o</kbd> for instance).
 
 My [fork](https://github.com/mattorb/keyboard) introduces the following key changes from the original:
-1. In super duper mode, emit 'nudging' mousewheel events with <kbd>n</kbd>,<kbd>m</kbd>,<kbd>.</kbd>.
+1. In super duper mode, emit 'nudging' mousewheel events with <kbd>n</kbd>,<kbd>m</kbd>,<kbd>,</kbd>,<kbd>.</kbd>.
 2. In super duper mode, activate application menu with <kbd>g</kbd>
 3. Adds 'Ah fudge' mode.    
 
