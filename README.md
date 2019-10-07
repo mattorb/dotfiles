@@ -27,17 +27,17 @@ Using [MenuHammer](https://github.com/FryJay/MenuHammer) enables a custom menu a
 
 <kbd>hyper</kbd>+<kbd>space</kbd> Show Top Menu
 
-<kbd>hyper</kbd>+<kbd>A</kbd> Show Applications Menu
+<kbd>hyper</kbd>+<kbd>a</kbd> Show Applications Menu
 
-<kbd>hyper</kbd>+<kbd>F</kbd> Show Finder Menu
+<kbd>hyper</kbd>+<kbd>f</kbd> Show Finder Menu
 
 Each of these takes a couple of key presses to navigate.   
 
 Heavily used applications are bound to a dedicated hotkey which has a good pnemonic: 
 
-<kbd>hyper</kbd>+<kbd>T</kbd> Launches Terminal
+<kbd>hyper</kbd>+<kbd>t</kbd> Launches Terminal
 
-<kbd>hyper</kbd>+<kbd>S</kbd> Launches Slack
+<kbd>hyper</kbd>+<kbd>s</kbd> Launches Slack
 
 ## Window Management
 -- courtesy of [JR](https://github.com/jasonrudolph/keyboard/)
@@ -58,16 +58,25 @@ Using [Hammerspoon](https://www.hammerspoon.org), we enable the simultaneous pre
 
 With the left hand, press and hold <kbd>s</kbd>+<kbd>d</kbd> to enter super duper mode.  Then use the right hand to press <kbd>h</kbd>,<kbd>j</kbd>,<kbd>k</kbd>, or <kbd>l</kbd> for moving the cursor left, down, up, or right.  Additionally, you can add <kbd>a</kbd> for <kbd>alt</kbd>, <kbd>f</kbd> of <kbd>command</kbd>, and <kbd>space</kbd> for <kbd>shift</kbd> using the left hand.
 
-This is mostly following what Jason implemented [here](https://github.com/jasonrudolph/keyboard/), so please refer to that for more explanation and detail.  There are a few other useful key combos that come with super duper mode (like tab navigation with <kbd>i</kbd> and <kbd>o</kbd> for instance).
+This is mostly following what Jason implemented [here](https://github.com/jasonrudolph/keyboard/), so please refer to that for more explanation and detail.
 
 My [fork](https://github.com/mattorb/keyboard) introduces the following key changes from the original:
-1. In super duper mode, emit 'nudging' mousewheel events with <kbd>n</kbd>,<kbd>m</kbd>,<kbd>,</kbd>,<kbd>.</kbd>.
+1. In super duper mode, emit 'nudging' mousewheel events with <kbd>n</kbd>,<kbd>m</kbd>,<kbd>,</kbd>,<kbd>.</kbd>.  Left and right click mouse with <kbd>b</kbd> and <kbd>/</kbd>.
 2. In super duper mode, activate application menu with <kbd>g</kbd>
-3. Adds 'Ah fudge' mode.    
+3. In super duper mode, map <kbd>y</kbd>/<kbd>u</kbd>/<kbd>i</kbd>/<kbd>o</kbd> to <kbd>home</kbd>/<kbd>pgdn</kbd>/<kbd>pgup</kbd>/<kbd>end</kbd>.
+4. Adds 'Ah fudge' mode.
 
 ## Ah Fudge Mode
-I added an <kbd>a</kbd>h <kbd>f</kbd>udge mode analagous to super duper, but which maps <kbd>h</kbd>,<kbd>j</kbd>,<kbd>k</kbd>, or <kbd>l</kbd> to
-<kbd>home</kbd>, <kbd>pgdn</kbd>, <kbd>pgup</kbd>, and <kbd>end</kbd>.   <kbd>i</kbd> switches to previous window, <kbd>o</kbd> switches to next window.
+I added an <kbd>a</kbd>h <kbd>f</kbd>udge mode analagous to super duper, 
+but focused on tab/window nav. The window navigation goes across all open apps and shows a screenshot preview via [Hammerspoon window switcher](https://www.hammerspoon.org/docs/hs.window.switcher.html).
+
+<kbd>u</kbd> switches to previous window
+
+<kbd>i</kbd> switches to next window 
+
+<kbd>j</kbd> switch to previous tab
+
+<kbd>k</kbd> switch to next tab
 
 The cursor movement/navigation part of this is especially useful on a laptop keyboard, but also generally better for keeping your hands on the home row.  Some of the reasoning and thought behind what I adopted can be found [here](https://mattorb.com/level-up-shortcuts-hammerspoon-home-row/).
 
@@ -75,7 +84,7 @@ The cursor movement/navigation part of this is especially useful on a laptop key
 
 <kbd>hyper</kbd>+<kbd>o</kbd> to autocomplete search menu items in the current application
 
-<kbd>hyper</kbd>+<kbd>p</kbd> for a cheatsheet of all menu items and their shortcut keys  (courtesy of KSheet hammerspoon spoon)
+<kbd>hyper</kbd>+<kbd>p</kbd> for a cheatsheet of all menu items and their shortcut keys  (courtesy of [KSheet](https://www.hammerspoon.org/Spoons/KSheet.html) hammerspoon spoon)
 
 Key help in the shell (see below)
 
@@ -84,7 +93,7 @@ Key help in the shell (see below)
 
 One thing I'm trying to get better at is using handy commandline shortcuts.  As part of that I added a keybinding:
 
-<kbd>alt</kbd>+<kbd>K</kbd> will show commandline keyboard shortcut help in-line while in the Terminal.   
+<kbd>alt</kbd>+<kbd>k</kbd> will show commandline keyboard shortcut help in-line while in the Terminal.   
 
 It keeps the cursor in-position in the commandline even after displaying a cheat sheet.  This means you can think 'What is that key that does x', press <kbd>alt</kbd>+<kbd>k</kbd> without losing your spot, see the help and then directly use that key all without leaving the commandline window as illustrated [here](https://mattorb.com/level-up-shortcuts-and-the-hyper-key/).
 
@@ -95,15 +104,15 @@ I'm using it for numerous things like replacing history search, dir/file tab com
 
 For example:
 
-<kbd>ctrl</kbd>+<kbd>R</kbd> search history w/fzf+preview
+<kbd>ctrl</kbd>+<kbd>r</kbd> search history w/fzf+preview
 
-<kbd>ctrl</kbd>+<kbd>F</kbd> inserts a file path (starts from token under by cursor)
+<kbd>ctrl</kbd>+<kbd>f</kbd> inserts a file path (starts from token under by cursor)
 
-<kbd>alt</kbd>+<kbd>O</kbd>	changes into subdirectories (starts from token by cursor)
+<kbd>alt</kbd>+<kbd>o</kbd>	changes into subdirectories (starts from token by cursor)
 
-<kbd>ctrl</kbd>+<kbd>O</kbd> open file using default editor
+<kbd>ctrl</kbd>+<kbd>o</kbd> open file using default editor
 
-<kbd>ctrl</kbd>+<kbd>G</kbd> open file using system bound app (pdf/img/etc)
+<kbd>ctrl</kbd>+<kbd>g</kbd> open file using system bound app (pdf/img/etc)
 
 
 Tour [here](https://mattorb.com/the-many-faces-of-fzf/)
