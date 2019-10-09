@@ -24,10 +24,10 @@ brew update; brew cask upgrade; brew cleanup
 
 brew bundle --file=- <<-EOS
 tap "tenzer/tap"
-tap "caskroom/cask"
+tap "homebrew/cask"
 brew "git"
 brew "ruby"
-brew "go"
+brew "go"   
 brew "python"
 brew "jq"
 brew "ansible"
