@@ -46,8 +46,8 @@ brew "Tenzer/tap/multitime"
 brew "ripgrep"
 EOS
 
-
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+# temporarily removed 'quicklook-csv' to see if that's the only one with an issue.
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
 # install fish shell
 brew bundle --file=- <<-EOS
