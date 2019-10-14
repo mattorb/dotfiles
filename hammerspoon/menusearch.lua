@@ -1,12 +1,13 @@
+-- luacheck: globals hs hyper
 local log = hs.logger.new('menusearch', 'info')
- 
+
 local choiceCache = {}
 
-function menusearch_callback(item)
+local function menusearch_callback(item)
     if item then
         local menu_item_str = item['text']
         log.d('Selected ' .. menu_item_str)
-        app = hs.application.frontmostApplication()
+        local app = hs.application.frontmostApplication()
         local menu_item = app:findMenuItem(menu_item_str)
         if menu_item then
             app:selectMenuItem(menu_item_str)
@@ -14,13 +15,13 @@ function menusearch_callback(item)
     end
 end
 
-chooser = hs.chooser.new(menusearch_callback)
+local chooser = hs.chooser.new(menusearch_callback)
 chooser:rows(10)
 chooser:searchSubText(true)
 chooser:placeholderText('menu item name')
 
-function tablemerge(t1,t2)
-    for _,v in ipairs(t2) do 
+local function tablemerge(t1,t2)
+    for _,v in ipairs(t2) do
         table.insert(t1, v)
     end
 
@@ -28,7 +29,7 @@ function tablemerge(t1,t2)
 end
 
 -- Generates a case insensitive [Pp][Aa][Tt][Tt][Ee][Rr][Nn] match string
-function nocasePattern (s)
+local function nocasePattern (s)
     s = string.gsub(s, "%a", function (c)
           return string.format("[%s%s]", string.lower(c),
                                          string.upper(c))
@@ -43,38 +44,37 @@ local commandEnum = {
     ctrl = '⌃',
 }
 
-function generateModifierString(menuitem) 
+local function generateModifierString(menuitem)
     local CmdModifiers = ''
-    for key, value in pairs(menuitem.AXMenuItemCmdModifiers) do
+    for _, value in pairs(menuitem.AXMenuItemCmdModifiers) do
         CmdModifiers = CmdModifiers .. commandEnum[value]
     end
     local CmdChar = menuitem.AXMenuItemCmdChar
     local CmdGlyph = hs.application.menuGlyphs[menuitem.AXMenuItemCmdGlyph] or ''
     local CmdKeys = CmdChar .. CmdGlyph
-    local shortcut = CmdModifiers .. CmdKeys    
     return CmdModifiers .. CmdKeys
 end
 
-function processMenuItems(menustru)
+local function processMenuItems(menustru)
     local choices = {}
 
-    for pos,val in pairs(menustru) do
+    for _,val in pairs(menustru) do
         if type(val) == "table" then
             if val.AXRole == "AXMenuBarItem" and type(val.AXChildren) == "table" then
-                log.d('parsing Menu Item Children for bar item ' .. val.AXTitle)                
+                log.d('parsing Menu Item Children for bar item ' .. val.AXTitle)
                 local submenuItems = processMenuItems(val.AXChildren[1])
                 choices = tablemerge(choices, submenuItems)
             elseif val.AXRole == "AXMenuItem" and not val.AXChildren then
                 if not (val.AXMenuItemCmdChar == '' and val.AXMenuItemCmdGlyph == '') then
                     local shortcut = generateModifierString(val)
-                    
-                    log.d('Adding Menu Item' .. val.AXTitle)                
+
+                    log.d('Adding Menu Item' .. val.AXTitle)
                     table.insert(choices, { text = val.AXTitle, subText=shortcut })
                 elseif #val.AXTitle > 0 then
                     table.insert(choices, { text = val.AXTitle, subText='' })
                 end
             elseif val.AXRole == "AXMenuItem" and type(val.AXChildren) == "table" then
-                log.d('parsing Menu Item Children for ' .. val.AXTitle)                
+                log.d('parsing Menu Item Children for ' .. val.AXTitle)
                 choices = tablemerge(choices, processMenuItems(val.AXChildren[1]))
             end
         end
@@ -83,17 +83,17 @@ function processMenuItems(menustru)
     return choices
 end
 
-function getCurrentAppMenuItems(app) 
+local function getCurrentAppMenuItems(app)
     return function ()
         if next(choiceCache) == nil then -- choiceCache is empty.  Populate.
             log.d('Populating menu item cache for app')
             choiceCache = processMenuItems(app:getMenuItems())
         end
-        
+
         local filteredChoices = {}
         local filterString = chooser:query()
 
-        for pos,val in pairs(choiceCache) do
+        for _,val in pairs(choiceCache) do
             if string.find(val["text"], nocasePattern(filterString)) then
                 table.insert(filteredChoices, val)
             end
@@ -103,7 +103,7 @@ function getCurrentAppMenuItems(app)
     end
 end
 
-function queryChange(a) 
+local function queryChange(a)
     chooser:refreshChoicesCallback()
 end
 
@@ -117,11 +117,11 @@ hs.hotkey.new(
             chooser:hide()
             choiceCache = {}
         else
-            app = hs.application.frontmostApplication()
-            
+            local app = hs.application.frontmostApplication()
+
             choiceCache = {}
             chooser:query(nil)
-            
+
             -- todo: there is still a slight delay before items are refreshed because fetching all menu items is slow
             chooser:choices(getCurrentAppMenuItems(app))
             chooser:show()
