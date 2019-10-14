@@ -9,6 +9,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
+    - name: Log Mac OS version
+      run: sw_vers
     - name: Execute full install
       run:  ./setup.sh
     - name: Record installed brew package versions to CI log
