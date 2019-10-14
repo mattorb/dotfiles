@@ -22,6 +22,8 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 brew update; brew cask upgrade; brew cleanup
 
+brew --version
+
 brew bundle --file=- <<-EOS
 tap "tenzer/tap"
 tap "homebrew/cask"
