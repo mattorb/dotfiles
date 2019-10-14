@@ -9,6 +9,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
+    - name: Log Homebrew version
+      run: brew --version
     - name: Log Mac OS version
       run: sw_vers
     - name: Execute full install
