@@ -19,9 +19,13 @@ else
 fi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+# Bypass upstream xattr issues with quarantine and latest OS X versions
+# TODO: remove me when a better solution is avail.
+[ ${GITHUB_ACTION} ] && export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=/Applications"
 
 brew update; brew cask upgrade; brew cleanup
 
+echo Effective Homebrew version:
 brew --version
 
 brew bundle --file=- <<-EOS
