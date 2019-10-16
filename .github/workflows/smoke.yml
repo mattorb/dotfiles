@@ -5,8 +5,10 @@ on: [push]
 jobs:
   build:
 
-    runs-on: macOS-latest
-    
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macOS-latest, macOS-10.14] 
     steps:
     - uses: actions/checkout@v1
     - name: Log Homebrew version
