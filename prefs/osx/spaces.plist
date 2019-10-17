@@ -189,16 +189,5 @@
             }
         );
     };
-    "app-bindings" =     {
-        "com.apple.dt.xcode" = "1CCC362D-E8A2-41ED-A6DA-3E261ADC3C7D";
-        "com.apple.terminal" = "550A95BF-F6A9-4768-BAF1-8BA0467F7542";
-        "com.flowdock.macdesktop" = "35362E8D-6E89-4C14-94A1-D5E4415731E7";
-        "com.jetbrains.intellij" = "DA16F1A2-2BCE-4E4F-94F5-2B43517BB820";
-        "com.microsoft.outlook" = "9CCCB959-3E1E-4FB4-9DF5-79079DEC7075";
-        "com.microsoft.vscode" = "3E758DFC-308B-4C68-97FE-A2BF7C79DF7A";
-        "com.tinyspeck.slackmacgap" = "04EF0A0D-CF0E-4C19-981F-9C7E47DCD802";
-        "it.bloop.airmail2" = "F970F6D0-93B2-4EFC-A5E7-881C7277D3D5";
-        "net.elasticthreads.nv" = AllSpaces;
-    };
     "spans-displays" = 1;
 }
