@@ -1,20 +1,21 @@
+-- luacheck: globals hs spoon hyper
 hs.loadSpoon("SpoonInstall")
 spoon.SpoonInstall.use_syncinstall = true
-Install=spoon.SpoonInstall
+local Install=spoon.SpoonInstall
 
 hyper = {"cmd", "alt", "ctrl", "shift"}
 
-spoon.SpoonInstall:installSpoonFromZipURL('https://github.com/mattorb/MenuHammer/raw/master/Spoons/MenuHammer.spoon.zip')
-menuHammer = hs.loadSpoon("MenuHammer")
+Install:installSpoonFromZipURL('https://github.com/mattorb/MenuHammer/raw/master/Spoons/MenuHammer.spoon.zip')
+local menuHammer = hs.loadSpoon("MenuHammer")
 menuHammer:enter()
 
-spoon.SpoonInstall:updateRepo('default')
-spoon.SpoonInstall:installSpoonFromRepo('Emojis')
-spoon.SpoonInstall:installSpoonFromRepo('KSheet')
+Install:updateRepo('default')
+Install:installSpoonFromRepo('Emojis')
+Install:installSpoonFromRepo('KSheet')
 
-sheet = hs.loadSpoon('KSheet')
+local sheet = hs.loadSpoon('KSheet')
 sheet:bindHotkeys({toggle={hyper, 'p'}})
-emojis = hs.loadSpoon('Emojis')
+local emojis = hs.loadSpoon('Emojis')
 emojis.chooser:rows(15)
 emojis:bindHotkeys({toggle={hyper, 'e'}})
 

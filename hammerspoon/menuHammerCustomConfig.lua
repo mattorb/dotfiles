@@ -1,3 +1,5 @@
+-- luacheck: globals menuHammerMenuList cons hyper hs resolutionMenuItems
+
 -- Menus
 local mainMenu = "mainMenu"
 
@@ -25,9 +27,6 @@ local textMenu = "textMenu"
 
 -- Toggles menu
 local toggleMenu = "toggleMenu"
-
--- Window menu
-local resizeMenu = "resizeMenu"
 
 menuHammerMenuList = {
 
