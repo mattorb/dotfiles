@@ -12,7 +12,7 @@ brew cask install \
     arq \
     bartender \
     carbon-copy-cloner \
-    cd-to-terminal \
+    cd-to \
     dropbox \
     nvalt \
     paw \
