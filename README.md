@@ -60,6 +60,8 @@ With the left hand, press and hold <kbd>s</kbd>+<kbd>d</kbd> to enter super dupe
 
 This is mostly following what Jason implemented [here](https://github.com/jasonrudolph/keyboard/), so please refer to that for more explanation and detail.
 
+The cursor movement/navigation part of this is especially useful on a laptop keyboard, but also generally better for keeping your hands on the home row.  Some of the reasoning and thought behind what I adopted can be found [here](https://mattorb.com/level-up-shortcuts-hammerspoon-home-row/).
+
 My [fork](https://github.com/mattorb/keyboard) introduces the following key changes from the original:
 1. In super duper mode, emit 'nudging' mousewheel events with <kbd>n</kbd>,<kbd>m</kbd>,<kbd>,</kbd>,<kbd>.</kbd>.  Left and right click mouse with <kbd>b</kbd> and <kbd>/</kbd>.
 2. In super duper mode, activate application menu with <kbd>g</kbd>
@@ -70,15 +72,22 @@ My [fork](https://github.com/mattorb/keyboard) introduces the following key chan
 I added an <kbd>a</kbd>h <kbd>f</kbd>udge mode analagous to super duper, 
 but focused on tab/window nav. The window navigation goes across all open apps and shows a screenshot preview via [Hammerspoon window switcher](https://www.hammerspoon.org/docs/hs.window.switcher.html).
 
-<kbd>u</kbd> switches to previous window
+<kbd>i</kbd> switches to previous window
 
-<kbd>i</kbd> switches to next window 
+<kbd>o</kbd> switches to next window 
 
 <kbd>j</kbd> switch to previous tab
 
 <kbd>k</kbd> switch to next tab
 
-The cursor movement/navigation part of this is especially useful on a laptop keyboard, but also generally better for keeping your hands on the home row.  Some of the reasoning and thought behind what I adopted can be found [here](https://mattorb.com/level-up-shortcuts-hammerspoon-home-row/).
+Additionally, 
+
+<kbd>u</kbd> switches to previous app (exactly like pressing <kbd>cmd</kbd>+<kbd>tab</kbd> once)
+
+<kbd>m</kbd> switches to the previous space
+s
+<kbd>,</kbd> switches to the next spcae
+
 
 ## Application level keyboard shortcut helpers
 
