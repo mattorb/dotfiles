@@ -3,6 +3,8 @@ echo Configuring mac
 
 set -e
 
+source is_ci.sh
+
 if [[ $(xcode-select --version) ]]; then
   echo Xcode command tools already installed
 else
@@ -21,7 +23,7 @@ fi
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # Bypass upstream xattr issues with quarantine and latest OS X versions.  specifically, quicklook-csv cask install failed
 # TODO: remove me when a better solution is avail.  
-[ ${GITHUB_ACTION} ] && export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=/Applications"
+is_ci && export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=/Applications"
 
 brew update; brew cask upgrade; brew cleanup
 
@@ -63,7 +65,7 @@ brew "bash"
 EOS
 
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-[ -z "$GITHUB_ACTION" ] && sudo -v
+is_ci || sudo -v
 sudo chsh -s /usr/local/bin/fish $(whoami)
 
 # fisher for completions. 3.2.7
