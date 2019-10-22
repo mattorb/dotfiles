@@ -14,3 +14,5 @@ set -x FZF_REVERSE_ISEARCH_OPTS '--preview-window=up:10 --preview="echo {}" --he
 if test -e ~/.config/fish/locals.fish
     source ~/.config/fish/locals.fish
 end
+
+alias l 'exa -l -g --git'
