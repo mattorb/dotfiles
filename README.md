@@ -1,3 +1,7 @@
+![](https://github.com/mattorb/dotfiles/workflows/install/badge.svg)
+
+![](https://dev.azure.com/mattorb/dotfiles/_apis/build/status/mattorb.dotfiles?branchName=master)
+
 # Matt's dot files
 OS X, Fish, VS Code, Karabiner, Hammerspoon, git aliases, git helpers (fclone/fhub).
 
