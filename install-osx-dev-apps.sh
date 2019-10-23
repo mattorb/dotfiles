@@ -66,7 +66,7 @@ EOS
 
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 is_ci || sudo -v
-sudo chsh -s /usr/local/bin/fish $(whoami)
+is_ci || sudo chsh -s /usr/local/bin/fish $(whoami)
 
 # fisher for completions. 3.2.7
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
