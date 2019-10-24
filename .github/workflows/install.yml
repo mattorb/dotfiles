@@ -11,15 +11,9 @@ jobs:
         os: [macOS-latest, macOS-10.14] 
     steps:
     - uses: actions/checkout@v1
-    - name: Log Homebrew version
-      run: brew --version
-    - name: Log Mac OS version
-      run: sw_vers
+    - name: Check versions of pre-installed software/system
+      run: ./ci_precheck.sh
     - name: Execute full install
       run:  ./setup.sh
-    - name: Record installed brew package versions to CI log
-      run: brew list --versions
-    - name: Record installed Casks to CI log
-      run: brew cask list --versions
-        
-        
+    - name: Check installed versions 
+      run: ./ci_postcheck.sh
