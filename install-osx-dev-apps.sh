@@ -74,13 +74,18 @@ mkdir -p ~/.config/fish/functions
 echo 2
 curl -Lo ~/.config/fish/functions/fisher.fish https://git.io/fisher
 echo 3
-fish -c "fisher add barnybug/docker-fish-completion"
+fish --version
+head -n 1 ~/.config/fish/functions/fisher.fish  
 echo 4
+fish -c "fisher add barnybug/docker-fish-completion"
+echo 5
 fish -c "fisher add ansible-completion"
+echo 6
 fish -c "fisher add jethrokuan/fzf"
+echo 7
 fish -c "fisher add derphilipp/enter-docker-fzf"
 
-echo 5
+echo 8
 brew cask install \
     docker \
     java \
