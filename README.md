@@ -1,6 +1,5 @@
-![](https://github.com/mattorb/dotfiles/workflows/install/badge.svg)
-
-![](https://dev.azure.com/mattorb/dotfiles/_apis/build/status/mattorb.dotfiles?branchName=master)
+[![Github Action Build Status](https://github.com/mattorb/dotfiles/workflows/install/badge.svg)](https://github.com/mattorb/dotfiles/actions?workflow=install) 
+[![Azure DevOps Build Status](https://dev.azure.com/mattorb/dotfiles/_apis/build/status/mattorb.dotfiles?branchName=master)](https://dev.azure.com/mattorb/dotfiles/_build/latest?definitionId=1&branchName=master)
 
 # Matt's dot files
 OS X, Fish, VS Code, Karabiner, Hammerspoon, git aliases, git helpers (fclone/fhub).
