@@ -69,12 +69,18 @@ is_ci || sudo -v
 is_ci || sudo chsh -s /usr/local/bin/fish $(whoami)
 
 # fisher for completions. 3.2.7
-curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+echo 1
+mkdir -p ~/.config/fish/functions
+echo 2
+curl -Lo ~/.config/fish/functions/fisher.fish https://git.io/fisher
+echo 3
 fish -c "fisher add barnybug/docker-fish-completion"
+echo 4
 fish -c "fisher add ansible-completion"
 fish -c "fisher add jethrokuan/fzf"
 fish -c "fisher add derphilipp/enter-docker-fzf"
 
+echo 5
 brew cask install \
     docker \
     java \
