@@ -34,8 +34,8 @@ function keys -d "Help for bound keys"
     echo fzf fish add-ons
     echo ---------------------------------------------------------
     echo Ctrl-R\t search history w/fzf+preview
-    echo Ctrl-F\t insert a file path \(starts from token under by cursor\)
-    echo Alt-O\t change into subdirectories \(starts from token by cursor\)
-    echo Ctrl-O\t open file using default editor
-    echo Ctrl-G\t open file using system bound app \(pdf/img/etc\)
+    echo Ctrl-O\t insert a file path \(starts from token under by cursor\)
+    echo Alt-C\t change into subdirectories \(starts from token by cursor\)
+    echo Alt-O\t open file using default editor
+    echo Alt-Shift-O\t open file using system bound app \(pdf/img/etc\)
 end
