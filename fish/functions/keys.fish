@@ -10,6 +10,7 @@ function keys -d "Help for bound keys"
     echo Ctrl-E\t Move cursor to end of line
     echo Ctrl-U\t Delete to beginning of line \(to killring\)
     echo Ctrl-K\t Delete to end of line \(to killlring\)
+    echo Alt-E\t Edit current command buffer in editor
     echo 
 
     echo Word, Character, killring, history
