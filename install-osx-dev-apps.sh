@@ -70,10 +70,10 @@ is_ci || sudo chsh -s /usr/local/bin/fish $(whoami)
 
 # fisher for completions. 3.2.7
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
-fish -c "fisher add barnybug/docker-fish-completion"
-fish -c "fisher add ansible-completion"
-fish -c "fisher add jethrokuan/fzf"
-fish -c "fisher add derphilipp/enter-docker-fzf"
+is_azure_devops || fish -c "fisher add barnybug/docker-fish-completion"
+is_azure_devops || fish -c "fisher add ansible-completion"
+is_azure_devops || fish -c "fisher add jethrokuan/fzf"
+is_azure_devops || fish -c "fisher add derphilipp/enter-docker-fzf"
 
 brew cask install \
     docker \
