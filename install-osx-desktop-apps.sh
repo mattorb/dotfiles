@@ -3,7 +3,7 @@ echo Installing desktop apps
 
 set -e
 
-source is_ci.sh
+source .cisupport/is_ci.sh
 
 # Bypass upstream xattr issues with quarantine and latest OS X versions.  specifically, dropbox cask install failed
 # TODO: remove me when a better solution is avail.

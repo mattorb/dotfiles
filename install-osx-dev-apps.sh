@@ -3,7 +3,7 @@ echo Configuring mac
 
 set -e
 
-source is_ci.sh
+source .cisupport/is_ci.sh
 
 if [[ $(xcode-select --version) ]]; then
   echo Xcode command tools already installed

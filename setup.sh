@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ROOT="$(pwd)"
-source is_ci.sh
+source .cisupport/is_ci.sh
 
 set -e
 

@@ -12,8 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Check versions of pre-installed software/system
-      run: ./ci_preinstall.sh
+      run: ./.cisupport/pre.sh
     - name: Execute full install
       run:  ./setup.sh
     - name: Check installed versions 
-      run: ./ci_postinstall.sh
+      run: ./.cisupport/post.sh
