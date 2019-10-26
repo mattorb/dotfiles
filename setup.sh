@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 ROOT="$(pwd)"
+source is_ci.sh
 
 set -e
 
@@ -22,4 +23,4 @@ main
 
 echo All Done!
 echo Restarting shell
-exec "$(which $SHELL)" -l
+is_azure_devops || exec "$(which $SHELL)" -l
