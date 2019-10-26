@@ -1,7 +1,7 @@
 [![Github Action Build Status](https://github.com/mattorb/dotfiles/workflows/install/badge.svg)](https://github.com/mattorb/dotfiles/actions?workflow=install) 
 [![Azure DevOps Build Status](https://dev.azure.com/mattorb/dotfiles/_apis/build/status/mattorb.dotfiles?branchName=master)](https://dev.azure.com/mattorb/dotfiles/_build/latest?definitionId=1&branchName=master)
 
-# Matt's dot files
+# Matt's MacOS dot files
 OS X, Fish, VS Code, Karabiner, Hammerspoon, git aliases, git helpers (fclone/fhub).
 
 Goals/etc here: https://mattorb.com/dotfiles/
@@ -50,9 +50,6 @@ Press <kbd>hyper</kbd>+<kbd>W</kbd> for Window Management
 It pops up a cheatsheet of window resize/move commands, re-using <kbd>h</kbd>,<kbd>j</kbd>,<kbd>k</kbd>, or <kbd>l</kbd> for moving and resizing a window to left half, bottom half, top half, and right half of the screen. 
 
 <kbd>i</kbd>, <kbd>o</kbd>,<kbd>,</kbd>, and <kbd>.</kbd> move and resize to the top left, top right, bottom left, and bottom right, respectively.
-
-## Spaces and Full Screen Applications
-I despise full screen *mode* for apps on OS X, but I love giving something the real estate and focus of occupying most/all of the screen . . . so what I am trying at the moment is binding certain apps to their own dedicated spaces and maximizing their windows by default.  i.e. - Slack and VS Code always execute with the window sized to the entire screen, but _not_ in *full screen mode*, in its own space.  This required some custom plist juggling.  See [here](prefs/osx/spaces.plist) for what is currently set up.
 
 ## Super Duper mode
 -- courtesy of [JR](https://github.com/jasonrudolph/keyboard/)
