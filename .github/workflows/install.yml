@@ -1,6 +1,11 @@
 name: install
 
-on: [push]
+on: 
+  push:
+    branches:
+    - master
+  schedule:
+    - cron:  '0 13 * * 6'
 
 jobs:
   build:
