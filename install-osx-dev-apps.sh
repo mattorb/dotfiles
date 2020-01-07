@@ -30,13 +30,15 @@ brew update; brew cask upgrade; brew cleanup
 echo Effective Homebrew version:
 brew --version
 
+brew install python@2
+brew install python
+
 brew bundle --file=- <<-EOS
 tap "tenzer/tap"
 tap "homebrew/cask"
 brew "git"
 brew "ruby"
 brew "go"   
-brew "python"
 brew "jq"
 brew "ansible"
 brew "awscli"
