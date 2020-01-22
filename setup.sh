@@ -8,6 +8,7 @@ main () {
     "$ROOT/symlink-common.sh"
 
     if [[ $(uname -s) == "Darwin" ]]; then
+        "$ROOT/install-osx-fonts.sh"
         "$ROOT/config-osx.sh"
         "$ROOT/install-osx-dev-apps.sh"
         "$ROOT/config-git.sh"

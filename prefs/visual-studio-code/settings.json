@@ -2,5 +2,6 @@
     "editor.fontSize": 14,
     "window.newWindowDimensions": "maximized",
     "window.nativeTabs": true,
-    "window.zoomLevel": 2
+    "window.zoomLevel": 2,
+    "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace"
 }
