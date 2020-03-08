@@ -53,6 +53,7 @@ brew "netcat"
 brew "Tenzer/tap/multitime"
 brew "ripgrep"
 brew "exa"
+brew "dust"
 EOS
 
 
