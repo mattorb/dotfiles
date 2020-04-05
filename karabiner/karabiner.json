@@ -270,28 +270,6 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
-                            {
-                                "description": "Hyper2 (right option) to spectacle cheatsheet",
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn",
-                                            "left_command",
-                                            "left_control",
-                                            "left_option",
-                                            "left_shift",
-                                            "right_option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "qlmanage -p ~/.config/karabiner/cheatsheets/spectacle.png 1>/dev/null 2>/dev/null"
-                                    }
-                                ],
-                                "type": "basic"
                             }
                         ]
                     },

@@ -19,7 +19,6 @@ brew cask install \
     nvalt \
     paw \
     slack \
-    spectacle \
     wireshark \
     keycastr \
     karabiner-elements \
