@@ -9,11 +9,10 @@ on:
 
 jobs:
   build:
-
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macOS-latest, macOS-10.14] 
+        os: [macOS-latest] 
     steps:
     - uses: actions/checkout@v1
     - name: Check versions of pre-installed software/system
