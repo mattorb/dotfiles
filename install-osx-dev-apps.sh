@@ -54,10 +54,11 @@ brew "Tenzer/tap/multitime"
 brew "ripgrep"
 brew "exa"
 brew "dust"
+brew "swiftformat"
 EOS
 
 
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+brew cask install swiftformat-for-xcode provisionql qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
 # install fish shell
 brew bundle --file=- <<-EOS
@@ -145,3 +146,4 @@ echo '17. Open security preferences and grant access to Karabiner Elements for k
 echo '18. Launch Karabiner Elements and answer any prompts to describe active keyboard type'
 echo '19. Launch Hammerspoon.  Set it to start on launch.   Enable Accessibility.'
 echo '20. Configure Tunnelblick VPN.'
+echo '21. Give permission for swiftformat in xcode:  System preferences -> extensions -> xcode -> Swiftformat'
