@@ -232,46 +232,6 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Shifts move the cursor one word backward when pressed alone. When used with other keys, act as normal shift.",
-                                "from": {
-                                    "key_code": "left_shift"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_shift"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Shifts move the cursor one word forward when pressed alone. When used with other keys, act as normal shift.",
-                                "from": {
-                                    "key_code": "right_shift"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_shift"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "left_option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
                                 "description": "Hyper2 (right option) to spectacle cheatsheet",
                                 "from": {
                                     "key_code": "k",
