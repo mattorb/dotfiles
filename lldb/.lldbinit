@@ -1,0 +1,11 @@
+# Print an autolayout trace
+command alias at expr -l objc -o -- [[UIWindow keyWindow] _autolayoutTrace]
+
+# Show the view controller
+command alias vc expr -l objc -o -- (UIViewController *)[view _viewControllerForAncestor];
+
+# Print all the views in the window
+command regex rd 's/^[[:space:]]*$/po [[[UIApplication sharedApplication] keyWindow] recursiveDescription]/' 's/^(.+)$/po [%1 recursiveDescription]/'
+
+# Print all the view controllers in the window
+command regex rvc 's/^[[:space:]]*$/po [[[UIApplication sharedApplication] keyWindow] recursiveDescription]/' 's/^(.+)$/po [%1 _viewControllerForAncestor]/'
