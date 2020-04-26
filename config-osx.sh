@@ -329,6 +329,14 @@ defaults write ~/Library/Preferences/com.apple.Terminal.plist "Default Window Se
 /usr/libexec/PlistBuddy -c "Add :'Window Settings':Homebrew:useOptionAsMetaKey bool 1" ~/Library/Preferences/com.apple.Terminal.plist
 
 ###############################################################################
+# Older macbook with physical function keys 								  #
+###############################################################################
+
+# Function keys always act like function keys.  Requires reboot atm.
+defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
+
+
+###############################################################################
 # Touchbar	                                                                  #
 ###############################################################################
 
