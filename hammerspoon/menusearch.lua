@@ -1,4 +1,4 @@
--- luacheck: globals hs hyper
+-- luacheck: globals hs hyper nohyper
 local log = hs.logger.new('menusearch', 'info')
 
 local choiceCache = {}
@@ -110,7 +110,7 @@ end
 chooser:queryChangedCallback(queryChange)
 
 hs.hotkey.new(
-    hyper,
+    nohyper,
     "o",
     function()
         if chooser:isVisible() then

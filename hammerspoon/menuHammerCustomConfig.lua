@@ -1,4 +1,4 @@
--- luacheck: globals menuHammerMenuList cons hyper hs resolutionMenuItems
+-- luacheck: globals menuHammerMenuList cons hyper hs resolutionMenuItems nohyper
 
 -- Menus
 local mainMenu = "mainMenu"
@@ -35,7 +35,7 @@ menuHammerMenuList = {
     ------------------------------------------------------------------------------------------------
     [mainMenu] = {
         parentMenu = nil,
-        menuHotkey = {hyper, 'space'},
+        menuHotkey = { nohyper, 'space'},
         menuItems = {
             {cons.cat.submenu, '', 'A', 'Applications', {
                 {cons.act.menu, applicationMenu}
@@ -69,7 +69,7 @@ menuHammerMenuList = {
     ------------------------------------------------------------------------------------------------
     applicationMenu = {
         parentMenu = mainMenu,
-        menuHotkey = {hyper, 'a'},
+        menuHotkey = nil,
         menuItems = {
             {cons.cat.action, '', 'C', "Chrome", {
                 {cons.act.launcher, 'Google Chrome'}
@@ -169,7 +169,7 @@ menuHammerMenuList = {
     ------------------------------------------------------------------------------------------------
     finderMenu = {
         parentMenu = mainMenu,
-        menuHotkey = {hyper, 'f'},
+        menuHotkey = nil,
         menuItems = {
             {cons.cat.action, '', 'D', 'Desktop', {
                 {cons.act.launcher, 'Finder'},
