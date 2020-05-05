@@ -1,3 +1,5 @@
+command script import /usr/local/opt/chisel/libexec/fblldb.py
+
 # Print an autolayout trace
 command alias at expr -l objc -o -- [[UIWindow keyWindow] _autolayoutTrace]
 

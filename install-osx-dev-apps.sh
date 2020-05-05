@@ -55,6 +55,7 @@ brew "ripgrep"
 brew "exa"
 brew "dust"
 brew "swiftformat"
+brew "chisel"
 EOS
 
 
