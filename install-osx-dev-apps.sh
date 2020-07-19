@@ -86,15 +86,16 @@ brew cask install \
 
 set +e # give virtualbox install a pass on github action CI   Fails for becaues the security panel is not openable from CI    
 
+
 if [[ $(brew cask install virtualbox) ]] ; then
     echo VirtualBox installed.
 else
     echo VirtualBox install second attempt. 
     echo "open/reopen System Preferences → Security & Privacy → General and allow Oracle kernel addon"
-    read -p "Do you wish to resume install (y/n)?" yn
+    is_ci || read -p "Do you wish to resume install (y/n)?" yn
 
-    echo "Attempting to install virtualbox"
-    brew cask install virtualbox
+    echo "2nd Attempting to install virtualbox"
+    is_ci || brew cask install virtualbox
 fi
 
 set -e
