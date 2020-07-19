@@ -83,6 +83,12 @@
 # fuzzy add using fzf
 	fza = "!git ls-files -m -o --exclude-standard | fzf --print0 -m --preview 'git diff {}' --preview-window=top:10:wrap | xargs -0 -t -o git add --all"
 
+# fuzzy restore using fzf
+	fzr = "!git ls-files -m --exclude-standard | fzf --print0 -m --preview 'git diff {}' --preview-window=top:10:wrap | xargs -0 -t -o git restore"
+
+# fuzzy restore staged using fzf
+	fzrs = "!git diff --name-only --staged | fzf --print0 -m --preview 'git diff {}' --preview-window=top:10:wrap | xargs -0 -t -o git restore --staged"
+
 # fuzzy switch branch...  /fish/functions/fco.fish seems better
 	fco = "!git short-recent | fzf --print0 | xargs -0 -t git checkout"
 
