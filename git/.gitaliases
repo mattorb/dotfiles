@@ -6,6 +6,9 @@
 	discard = checkout --
 	uncommit = reset --mixed HEAD~
 
+# Amend current commit w/ timestamp touch and author reset
+	ca = commit --amend --reset-author
+
 # Fixup staged changes to specified commit
 	fixup = !sh -c 'REV=$(git rev-parse $1) && git commit --fixup $@ && git rebase -i --autosquash $REV^' -
 
