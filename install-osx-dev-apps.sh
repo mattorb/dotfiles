@@ -61,8 +61,8 @@ EOS
 
 brew cask install swiftformat-for-xcode provisionql qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
-# install fish shell 3.0.2 - pinned for jethrokuan/fzf compatibility.  upgrade those together later
-brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/f9d6382833693e3a6b2d69b9a7abe4f36baccfa3/Formula/fish.rb
+# last tested ver: fish 3.1.2
+brew install fish
 
 brew bundle --file=- <<-EOS
 brew "bash"
