@@ -25,7 +25,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # TODO: remove me when a better solution is avail.  
 is_ci && export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=/Applications"
 
-brew update; brew cask upgrade; brew cleanup
+brew update; brew cask upgrade; brew cleanup || true
 
 echo Effective Homebrew version:
 brew --version
