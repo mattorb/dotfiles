@@ -81,7 +81,6 @@ is_azure_devops || fish -c "fisher add derphilipp/enter-docker-fzf"
 
 brew cask install \
     docker \
-    java \
     visual-studio-code 
 
 set +e # give virtualbox install a pass on github action CI   Fails for becaues the security panel is not openable from CI    
@@ -150,3 +149,4 @@ echo '18. Launch Karabiner Elements and answer any prompts to describe active ke
 echo '19. Launch Hammerspoon.  Set it to start on launch.   Enable Accessibility.'
 echo '20. Configure Tunnelblick VPN.'
 echo '21. Give permission for swiftformat in xcode:  System preferences -> extensions -> xcode -> Swiftformat'
+echo '22. install java if desired'
