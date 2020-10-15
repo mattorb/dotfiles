@@ -13,7 +13,7 @@ else
 fi
 
 if [[ $(brew --version) ]] ; then
-    echo "Attempting to update Homebrew"
+    echo "Attempting to update Homebrew from version $(brew --version)"
     brew update
 else
     echo "Attempting to install Homebrew"
