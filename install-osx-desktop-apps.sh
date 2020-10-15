@@ -15,7 +15,6 @@ brew cask install \
     bartender \
     carbon-copy-cloner \
     cd-to \
-    dropbox \
     nvalt \
     paw \
     slack \

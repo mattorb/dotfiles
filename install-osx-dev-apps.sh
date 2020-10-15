@@ -132,7 +132,7 @@ echo '1. Execute this to add ssh key (w/passphrase) to keychain:  ssh-add -K ~/.
 echo '2. Then git config --global user.name "Your Name"'
 echo '3. Then git config --global user.email "Your_Email@...com"'
 echo '4. Create a git Personal Access token, then:  "hub browse" and enter git user and Access token to configure hub to use that'
-echo '5. Configure dropbox accounts'
+echo '5. Install dropbox and Configure dropbox accounts'
 echo '6. Configure Slack accounts'
 echo '7. Configure nvalt storage backend /Dropbox/Notes'
 echo '8. Install Air Mail from App Store and configure accounts'
