@@ -74,12 +74,11 @@ echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 is_ci || sudo -v
 is_ci || sudo chsh -s /usr/local/bin/fish $(whoami)
 
-# fisher for completions. 3.2.7
+# fisher for completions. 4.1.0
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
-is_azure_devops || fish -c "fisher add barnybug/docker-fish-completion"
-is_azure_devops || fish -c "fisher add ansible-completion"
-is_azure_devops || fish -c "fisher add jethrokuan/fzf"
-is_azure_devops || fish -c "fisher add derphilipp/enter-docker-fzf"
+is_azure_devops || fish -c "fisher install barnybug/docker-fish-completion"
+is_azure_devops || fish -c "fisher install jethrokuan/fzf"
+is_azure_devops || fish -c "fisher install derphilipp/enter-docker-fzf"
 
 brew install --cask \
     docker \
