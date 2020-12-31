@@ -9,7 +9,7 @@ source .cisupport/is_ci.sh
 # TODO: remove me when a better solution is avail.
 is_ci && export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=/Applications"
 
-brew cask install \
+brew install --cask \
     1password \
     arq \
     bartender \
