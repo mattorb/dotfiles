@@ -25,7 +25,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # TODO: remove me when a better solution is avail.  
 is_ci && export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=/Applications"
 
-brew update; brew cask upgrade; brew cleanup || true
+brew update; brew upgrade --cask; brew cleanup || true
 
 echo Effective Homebrew version:
 brew --version
@@ -104,7 +104,6 @@ ln -sf /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /u
 
 code --install-extension lunaryorn.fish-ide
 code --install-extension ms-azuretools.vscode-docker 
-code --install-extension haaaad.ansible
 
 ln -sf $(pwd)/prefs/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
 
