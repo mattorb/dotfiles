@@ -32,7 +32,7 @@ echo Effective Homebrew version:
 brew --version
 
 brewover python || true
-brewover awscli
+brewover awscli || true
 
 brew bundle --file=- <<-EOS
 tap "tenzer/tap"
