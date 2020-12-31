@@ -4,6 +4,7 @@ echo Configuring mac
 set -e
 
 source .cisupport/is_ci.sh
+source .cisupport/brewover.sh
 
 if [[ $(xcode-select --version) ]]; then
   echo Xcode command tools already installed
@@ -30,16 +31,17 @@ brew update; brew upgrade --cask; brew cleanup || true
 echo Effective Homebrew version:
 brew --version
 
+brewover python
+brewover awscli
+
 brew bundle --file=- <<-EOS
 tap "tenzer/tap"
 tap "homebrew/cask"
 brew "git"
 brew "ruby"
 brew "go"   
-brew "python"
 brew "jq"
 brew "ansible"
-brew "awscli"
 brew "csshX"
 brew "hub"
 brew "diff-so-fancy"
