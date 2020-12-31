@@ -23,8 +23,9 @@ brew install --cask \
     keycastr \
     karabiner-elements \
     hammerspoon \
-    tunnelblick \
-    p4v
+    tunnelblick 
+
+# Disabling p4v where the binary appears to change without version revs (according to sha checksum comparison failures)
 
 # per Karabiner docs, need parent dir sym link, not json config sym link
 ln -sf $(pwd)/karabiner $HOME/.config
