@@ -31,7 +31,7 @@ brew update; brew upgrade --cask; brew cleanup || true
 echo Effective Homebrew version:
 brew --version
 
-brewover python
+brewover python || true
 brewover awscli
 
 brew bundle --file=- <<-EOS
