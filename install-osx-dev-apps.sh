@@ -61,7 +61,7 @@ brew "chisel"
 EOS
 
 
-brew cask install swiftformat-for-xcode provisionql qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+brew install --cask swiftformat-for-xcode provisionql qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
 # last tested ver: fish 3.1.2
 brew install fish
@@ -81,14 +81,14 @@ is_azure_devops || fish -c "fisher add ansible-completion"
 is_azure_devops || fish -c "fisher add jethrokuan/fzf"
 is_azure_devops || fish -c "fisher add derphilipp/enter-docker-fzf"
 
-brew cask install \
+brew install --cask \
     docker \
     visual-studio-code 
 
 set +e # give virtualbox install a pass on github action CI   Fails for becaues the security panel is not openable from CI    
 
 
-if [[ $(brew cask install virtualbox) ]] ; then
+if [[ $(brew install --cask virtualbox) ]] ; then
     echo VirtualBox installed.
 else
     echo VirtualBox install second attempt. 
@@ -96,7 +96,7 @@ else
     is_ci || read -p "Do you wish to resume install (y/n)?" yn
 
     echo "2nd Attempting to install virtualbox"
-    is_ci || brew cask install virtualbox
+    is_ci || brew install --cask virtualbox
 fi
 
 set -e
