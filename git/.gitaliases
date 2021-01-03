@@ -6,6 +6,9 @@
 	discard = checkout --
 	uncommit = reset --mixed HEAD~
 
+# Stash unstaged and untracked changes
+	stashwip = stash save -u -k "WIP"
+
 # Amend current commit w/ timestamp touch and author reset
 	ca = commit --amend --reset-author
 
