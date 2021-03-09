@@ -33,13 +33,13 @@ brew --version
 
 brewover python || true
 brewover awscli || true
+brewover go || true
 
 brew bundle --file=- <<-EOS
 tap "tenzer/tap"
 tap "homebrew/cask"
 brew "git"
 brew "ruby"
-brew "go"   
 brew "jq"
 brew "ansible"
 brew "csshX"
