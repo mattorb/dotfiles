@@ -30,6 +30,9 @@ brew install --cask \
 # per Karabiner docs, need parent dir sym link, not json config sym link
 ln -sf $(pwd)/karabiner $HOME/.config
 
+# atreus help images
+ln -sf $(pwd)/hw/atreus/kaleidoscope_with_chrysalis $HOME/.config
+
 # force reload after symlink creation
 is_ci || launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
 
