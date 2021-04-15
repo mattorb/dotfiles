@@ -115,8 +115,8 @@ KEYMAPS(
   
   [MOUSE2] = KEYMAP_STACKED
   (
-       ___   ,Key_mouseBtnL,Key_mouseUp ,Key_mouseBtnR         ,___
-      ,___     ,Key_mouseL   ,Key_mouseDn ,Key_mouseR         ,___
+       ___   ,Key_mouseBtnL,Key_mouseUp ,Key_mouseBtnR         ,Key_mouseScrollDn
+      ,___     ,Key_mouseL   ,Key_mouseDn ,Key_mouseR         ,Key_mouseScrollUp
       ,___   ,___   ,___       ,___         ,___, ___
       ,___ ,___ ,___ ,___ ,___ ,___
 
