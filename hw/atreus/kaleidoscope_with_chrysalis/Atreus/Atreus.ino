@@ -38,7 +38,8 @@
 
 enum {
   MACRO_QWERTY,
-  MACRO_VERSION_INFO
+  MACRO_VERSION_INFO,
+  MACRO_BIRD
 };
 
 #define Key_Exclamation LSHIFT(Key_1)
@@ -128,6 +129,15 @@ const macro_t *macroAction(uint8_t macroIndex, uint8_t keyState) {
     if (keyToggledOn(keyState)) {
       Macros.type(PSTR("Keyboardio Atreus - Kaleidoscope "));
       Macros.type(PSTR(BUILD_INFORMATION));
+    }
+    break;
+  case MACRO_BIRD:
+    if (keyToggledOn(keyState)) {
+       for(int x=0;x<3600;x++)
+       {
+          Macros.play(MACRODOWN(T(RightShift), W(1000)));
+       }      
+       //Macros.play(MACRODOWN(T(B),W(1000),T(I),W(1000),T(R),W(1000),T(D),W(500),T(Spacebar)));
     }
     break;
   default:
