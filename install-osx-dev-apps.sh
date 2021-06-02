@@ -36,7 +36,6 @@ brewover awscli || true
 brewover go || true
 
 brew bundle --file=- <<-EOS
-tap "tenzer/tap"
 tap "homebrew/cask"
 brew "git"
 brew "ruby"
@@ -52,13 +51,13 @@ brew "fzf"
 brew "parallel"
 brew "telnet"
 brew "netcat"
-brew "Tenzer/tap/multitime"
 brew "ripgrep"
 brew "exa"
 brew "dust"
 brew "swiftformat"
 brew "chisel"
 EOS
+# multitime "Tenzer/tap/multitime" tap went bad: ref: http://tratt.net/laurie/src/multitime/
 
 
 brew install --cask swiftformat-for-xcode provisionql qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv qlimagesize webpquicklook suspicious-package quicklookase qlvideo
