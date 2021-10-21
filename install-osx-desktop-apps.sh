@@ -13,7 +13,6 @@ brew install --cask \
     1password \
     arq \
     bartender \
-    carbon-copy-cloner \
     cd-to \
     nvalt \
     paw \
