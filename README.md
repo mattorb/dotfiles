@@ -18,7 +18,7 @@ or w/o git: `
 ## Window Management
 -- courtesy of [JR](https://github.com/jasonrudolph/keyboard/)
 
-Press <kbd>hyper</kbd>+<kbd>W</kbd> for Window Management 
+Press <kbd>alt</kbd>+<kbd>W</kbd> for Window Management 
 
 It pops up a cheatsheet of window resize/move commands, re-using <kbd>h</kbd>,<kbd>j</kbd>,<kbd>k</kbd>, or <kbd>l</kbd> for moving and resizing a window to left half, bottom half, top half, and right half of the screen. 
 
@@ -64,9 +64,9 @@ s
 
 ## Application level keyboard shortcut helpers
 
-<kbd>hyper</kbd>+<kbd>o</kbd> to autocomplete search menu items in the current application
+<kbd>alt</kbd>+<kbd>o</kbd> to autocomplete search menu items in the current application
 
-<kbd>hyper</kbd>+<kbd>p</kbd> for a cheatsheet of all menu items and their shortcut keys  (courtesy of [KSheet](https://www.hammerspoon.org/Spoons/KSheet.html) hammerspoon spoon)
+<kbd>alt</kbd>+<kbd>p</kbd> for a cheatsheet of all menu items and their shortcut keys  (courtesy of [KSheet](https://www.hammerspoon.org/Spoons/KSheet.html) hammerspoon spoon)
 
 Key help in the shell (see below)
 
@@ -111,7 +111,7 @@ I'm currently using [Gifox](https://gifox.io) for to record animated gifs of ter
 
 ### Inspiration / Credits
 I've tried to mention sources when something was derived, but a couple of large influences stand out in what's here:
-* FZF commnity wiki
+* FZF community wiki
 * http://github.com/jasonrudolph/keyboard
 * https://dotfiles.github.io
 * Fish community wiki
