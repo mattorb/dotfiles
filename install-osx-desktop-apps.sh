@@ -21,20 +21,13 @@ brew install --cask \
     spectacle \
     wireshark \
     keycastr \
-    karabiner-elements \
     hammerspoon \
     tunnelblick 
 
 # Disabling p4v where the binary appears to change without version revs (according to sha checksum comparison failures)
 
-# per Karabiner docs, need parent dir sym link, not json config sym link
-ln -sf $(pwd)/karabiner $HOME/.config
-
 # atreus help images
 ln -sf $(pwd)/hw/atreus/kaleidoscope_with_chrysalis $HOME/.config
-
-# force reload after symlink creation
-is_ci || launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
 
 ln -sf $(pwd)/hammerspoon $HOME/.hammerspoon
 
@@ -42,7 +35,6 @@ ln -sf $(pwd)/hammerspoon $HOME/.hammerspoon
 svn export https://github.com/mattorb/keyboard/branches/customizations/hammerspoon hammerspoon/keyboard
 
 is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Hammerspoon.app", hidden:true}' > /dev/null
-is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Karabiner-Elements.app", hidden:true}' > /dev/null
 is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/nvALT.app", hidden:true}' > /dev/null
 
 # Turn off Hammerspoon dock icon

@@ -2,7 +2,7 @@
 [![Azure DevOps Build Status](https://dev.azure.com/mattorb/dotfiles/_apis/build/status/mattorb.dotfiles?branchName=master)](https://dev.azure.com/mattorb/dotfiles/_build/latest?definitionId=1&branchName=master)
 
 # Matt's MacOS dotfiles
-Fish, VS Code, Karabiner, Hammerspoon, FZF, git aliases, git helpers (fclone/fhub).
+Fish, VS Code, Hammerspoon, FZF, git aliases, git helpers (fclone/fhub).
 
 Goals here: https://mattorb.com/dotfiles/
 
@@ -14,11 +14,6 @@ git clone http://github.com/mattorb/dotfiles && cd dotfiles && ./setup.sh
 or w/o git: `
 
 `curl -sL https://github.com/mattorb/dotfiles/archive/master.tar.gz | tar xz && cd dotfiles-master && ./setup.sh`
-
-## The Hyper Key
-Using [Karabiner](https://pqrs.org/osx/karabiner/), the  <kbd>right-command</kbd> key is remapped to be a new meta key, called the <kbd>hyper</kbd> key.   
-
-The <kbd>hyper</kbd> key is mapped to trigger <kbd>command</kbd>+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>shift</kbd> when pressed. We leverage that for defining new global keyboard shortcuts because it has a very low chance of having application level key binding conflicts, so it is a clean slate of slots to bind behaviors on.
 
 ## MenuHammer and Launching Applications
 [MenuHammer](https://github.com/FryJay/MenuHammer) enables a custom menu accessible from anywhere via <kbd>hyper</kbd>+<kbd>space</kbd>.   Many helpful actions, such as toggling wi-fi, executing a favorite script, or launching an application are only an alpha keypress or two away.
@@ -138,4 +133,3 @@ I've tried to mention sources when something was derived, but a couple of large 
 * https://dotfiles.github.io
 * Fish community wiki
 * Hammerspoon community
-* Karabiner community
