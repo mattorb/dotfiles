@@ -15,23 +15,6 @@ or w/o git: `
 
 `curl -sL https://github.com/mattorb/dotfiles/archive/master.tar.gz | tar xz && cd dotfiles-master && ./setup.sh`
 
-## MenuHammer and Launching Applications
-[MenuHammer](https://github.com/FryJay/MenuHammer) enables a custom menu accessible from anywhere via <kbd>hyper</kbd>+<kbd>space</kbd>.   Many helpful actions, such as toggling wi-fi, executing a favorite script, or launching an application are only an alpha keypress or two away.
-
-<kbd>hyper</kbd>+<kbd>space</kbd> Show Top Menu
-
-<kbd>hyper</kbd>+<kbd>a</kbd> Show Applications Menu
-
-<kbd>hyper</kbd>+<kbd>f</kbd> Show Finder Menu
-
-Each of these takes a couple of key presses to navigate.   
-
-Heavily used applications are bound to a dedicated hotkey which has a good pnemonic: 
-
-<kbd>hyper</kbd>+<kbd>t</kbd> Launches Terminal
-
-<kbd>hyper</kbd>+<kbd>s</kbd> Launches Slack
-
 ## Window Management
 -- courtesy of [JR](https://github.com/jasonrudolph/keyboard/)
 

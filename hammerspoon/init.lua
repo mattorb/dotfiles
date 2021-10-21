@@ -6,10 +6,6 @@ local Install=spoon.SpoonInstall
 hyper = {"cmd", "alt", "ctrl", "shift"}
 nohyper = {"alt"}
 
--- Install:installSpoonFromZipURL('https://github.com/mattorb/MenuHammer/raw/master/Spoons/MenuHammer.spoon.zip')
--- local menuHammer = hs.loadSpoon("MenuHammer")
--- menuHammer:enter()
-
 Install:updateRepo('default')
 Install:installSpoonFromRepo('Emojis')
 Install:installSpoonFromRepo('KSheet')
