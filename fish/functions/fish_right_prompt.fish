@@ -3,7 +3,7 @@ function fish_right_prompt -d "Write out the right prompt"
   set -l is_git_repository 0 
 
   if command --search git >/dev/null do
-    set is_git_repository (git rev-parse --is-inside-work-tree ^/dev/null)
+    set is_git_repository (git rev-parse --is-inside-work-tree 2>/dev/null)
   end
   
   # Print a yellow fork symbol when in a subshell
