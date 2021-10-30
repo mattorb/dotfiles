@@ -27,12 +27,12 @@ function fish_right_prompt -d "Write out the right prompt"
   # Red means the local branch and the upstream branch have diverted.
   # Yellow means there are more than 3 commits to push or pull.
   if test -n "$is_git_repository"
-    git rev-parse --abbrev-ref '@{upstream}' >/dev/null ^&1; and set -l has_upstream
+    git rev-parse --abbrev-ref '@{upstream}' >/dev/null 2>&1; and set -l has_upstream
     if set -q has_upstream
-      set -l commit_counts (git rev-list --left-right --count 'HEAD...@{upstream}' ^/dev/null)
+      set -l commit_counts (git rev-list --left-right --count 'HEAD...@{upstream}' 2>/dev/null)
       
-      set -l commits_to_push (echo $commit_counts | cut -f 1 ^/dev/null)
-      set -l commits_to_pull (echo $commit_counts | cut -f 2 ^/dev/null)
+      set -l commits_to_push (echo $commit_counts | cut -f 1 2>/dev/null)
+      set -l commits_to_pull (echo $commit_counts | cut -f 2 2>/dev/null)
 
       if test $commits_to_push != 0
         if test $commits_to_pull -ne 0
@@ -77,10 +77,10 @@ function fish_right_prompt -d "Write out the right prompt"
   if test -n "$is_git_repository"
     echo -n ":"
 
-    set -l branch (git symbolic-ref --short HEAD ^/dev/null; or git show-ref --head -s --abbrev | head -n1 ^/dev/null)
+    set -l branch (git symbolic-ref --short HEAD 2>/dev/null; or git show-ref --head -s --abbrev | head -n1 2>/dev/null)
     
-    git diff-files --quiet --ignore-submodules ^/dev/null; or set -l has_unstaged_files
-    git diff-index --quiet --ignore-submodules --cached HEAD ^/dev/null; or set -l has_staged_files
+    git diff-files --quiet --ignore-submodules 2>/dev/null; or set -l has_unstaged_files
+    git diff-index --quiet --ignore-submodules --cached HEAD 2>/dev/null; or set -l has_staged_files
 
     if set -q has_unstaged_files
       set_color red

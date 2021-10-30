@@ -8,25 +8,25 @@ function fish_prompt --description 'Write out the prompt'
 
         function __fish_repaint_user --on-variable fish_color_user --description "Event handler, repaint when fish_color_user changes"
             if status --is-interactive
-                commandline -f repaint ^/dev/null
+                commandline -f repaint 2>/dev/null
             end
         end
 
         function __fish_repaint_host --on-variable fish_color_host --description "Event handler, repaint when fish_color_host changes"
             if status --is-interactive
-                commandline -f repaint ^/dev/null
+                commandline -f repaint 2>/dev/null
             end
         end
 
         function __fish_repaint_status --on-variable fish_color_status --description "Event handler; repaint when fish_color_status changes"
             if status --is-interactive
-                commandline -f repaint ^/dev/null
+                commandline -f repaint 2>/dev/null
             end
         end
 
         function __fish_repaint_bind_mode --on-variable fish_key_bindings --description "Event handler; repaint when fish_key_bindings changes"
             if status --is-interactive
-                commandline -f repaint ^/dev/null
+                commandline -f repaint 2>/dev/null
             end
         end
 
@@ -69,7 +69,6 @@ function fish_prompt --description 'Write out the prompt'
     end
 
     switch (prompt_hostname) 
-        case 'isdv*':
         case 'msmith*':
         case '*':
             echo -n -s (set_color $fish_color_host) (prompt_hostname) 
