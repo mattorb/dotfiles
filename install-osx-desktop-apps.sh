@@ -10,7 +10,7 @@ source .cisupport/is_ci.sh
 is_ci && export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=/Applications"
 
 brew install --cask \
-    1password \
+    keepassxc \
     arq \
     bartender \
     cd-to \
