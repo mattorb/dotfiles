@@ -144,6 +144,5 @@ echo '14. Configure Carbon Copy cloner'
 echo '15. Launch Spectacle and enable accessibility access.  Then menubar->spectacle->Preferences->Launch at login'
 echo '16. Put a github token in ~/.fhub_token to enable the fhub repo navigation function.  Put additional orgs (to include their public repos) in ~/.fhub_orgs'
 echo '17. Launch Hammerspoon.  Set it to start on launch.   Enable Accessibility.'
-echo '18. Configure Tunnelblick VPN.'
-echo '19. Give permission for swiftformat in xcode:  System preferences -> extensions -> xcode -> Swiftformat'
-echo '20. install java if desired'
+echo '18. Give permission for swiftformat in xcode:  System preferences -> extensions -> xcode -> Swiftformat'
+

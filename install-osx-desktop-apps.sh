@@ -17,11 +17,9 @@ brew install --cask \
     nvalt \
     paw \
     slack \
-    spectacle \
     wireshark \
     keycastr \
-    hammerspoon \
-    tunnelblick 
+    hammerspoon
 
 # Disabling p4v where the binary appears to change without version revs (according to sha checksum comparison failures)
 
