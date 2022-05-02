@@ -34,10 +34,10 @@ brew --version
 brewover python || true
 brewover awscli || true
 brewover go || true
+brewover git || true
 
 brew bundle --file=- <<-EOS
 tap "homebrew/cask"
-brew "git"
 brew "ruby"
 brew "jq"
 brew "ansible"
