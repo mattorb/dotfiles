@@ -31,8 +31,6 @@ brew update; brew upgrade --cask; brew cleanup || true
 echo Effective Homebrew version:
 brew --version
 
-brewover python || true
-brewover awscli || true
 brewover go || true
 brewover git || true
 
@@ -40,34 +38,20 @@ brew bundle --file=- <<-EOS
 tap "homebrew/cask"
 brew "ruby"
 brew "jq"
-brew "ansible"
-brew "csshX"
-brew "hub"
 brew "diff-so-fancy"
-brew "packer"
-brew "terraform"
-brew "vault"
 brew "fzf"
 brew "parallel"
-brew "telnet"
-brew "netcat"
 brew "ripgrep"
-brew "exa"
-brew "dust"
 brew "swiftformat"
 brew "chisel"
 EOS
-# multitime "Tenzer/tap/multitime" tap went bad: ref: http://tratt.net/laurie/src/multitime/
+# exa, dust, multitime "Tenzer/tap/multitime" tap went bad: ref: http://tratt.net/laurie/src/multitime/
 
 
 brew install --cask swiftformat-for-xcode provisionql qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
-# last tested ver: fish 3.1.2
+# last tested ver: fish 3.4.1
 brew install fish
-
-brew bundle --file=- <<-EOS
-brew "bash"
-EOS
 
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 is_ci || sudo -v
@@ -83,27 +67,10 @@ brew install --cask \
     docker \
     visual-studio-code 
 
-set +e # give virtualbox install a pass on github action CI   Fails for becaues the security panel is not openable from CI    
-
-
-if [[ $(brew install --cask virtualbox) ]] ; then
-    echo VirtualBox installed.
-else
-    echo VirtualBox install second attempt. 
-    echo "open/reopen System Preferences → Security & Privacy → General and allow Oracle kernel addon"
-    is_ci || read -p "Do you wish to resume install (y/n)?" yn
-
-    echo "2nd Attempting to install virtualbox"
-    is_ci || brew install --cask virtualbox
-fi
-
-set -e
-
 # Equivalent of VS [gui] Command Palette  "Shell command: Install 'code' command in PATH"
 ln -sf /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code
 
 code --install-extension lunaryorn.fish-ide
-code --install-extension ms-azuretools.vscode-docker 
 
 ln -sf $(pwd)/prefs/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
 
@@ -112,16 +79,6 @@ git config --global core.editor "code -w -n"
 git config --global core.pager "diff-so-fancy | less --tabs=1,5 -R"
 git config --global pull.rebase true
 git config --global rebase.autoStash true
-
-git config --global difftool.prompt false
-git config --global merge.tool p4mergetool
-git config --global mergetool.p4mergetool.cmd "/usr/local/bin/p4merge \$PWD/\$BASE \$PWD/\$LOCAL \$PWD/\$REMOTE \$PWD/\$MERGED"
-git config --global mergetool.p4mergetool.trustExitCode false
-git config --global mergetool.keepBackup false
-
-git config --global diff.tool p4mergetool
-git config --global difftool.p4mergetool.cmd "/usr/local/bin/p4merge \$LOCAL \$REMOTE"
-git config --global difftool.p4mergetool.prompt false
 
 cd src/listrepo
 ./build.sh
@@ -139,10 +96,6 @@ echo '9. Add Bartender license, configure bartender'
 echo '10. Configure Keepass'
 echo '11. Install IDEs'
 echo '12. Add cdto to finder toolbar:   Drag Applications/cd to.app onto the Finder toolbar while holding down the command(⌘) and option(⌥) keys'
-echo '13. Configure ARQ'
-echo '14. Configure Carbon Copy cloner'
-echo '15. Launch Spectacle and enable accessibility access.  Then menubar->spectacle->Preferences->Launch at login'
-echo '16. Put a github token in ~/.fhub_token to enable the fhub repo navigation function.  Put additional orgs (to include their public repos) in ~/.fhub_orgs'
-echo '17. Launch Hammerspoon.  Set it to start on launch.   Enable Accessibility.'
-echo '18. Give permission for swiftformat in xcode:  System preferences -> extensions -> xcode -> Swiftformat'
+echo '13. Put a github token in ~/.fhub_token to enable the fhub repo navigation function.  Put additional orgs (to include their public repos) in ~/.fhub_orgs'
+echo '14. Launch Hammerspoon.  Set it to start on launch.   Enable Accessibility.'
 
