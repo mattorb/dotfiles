@@ -3,5 +3,6 @@
     "window.newWindowDimensions": "maximized",
     "window.nativeTabs": true,
     "window.zoomLevel": 1,
-    "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace"
+    "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
+    "security.workspace.trust.untrustedFiles": "open"
 }
