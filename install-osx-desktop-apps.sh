@@ -12,13 +12,13 @@ is_ci && export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=/Applications"
 brew install --cask \
     bartender \
     cd-to \
-    nvalt \
     paw \
     slack \
     wireshark \
     keycastr \
     hammerspoon
 
+# Disabling nvalt which has a cask error atm.
 # Disabling arq where the cask does not seem to stay current
 
 # Disabling p4v where the binary appears to change without version revs (according to sha checksum comparison failures)
