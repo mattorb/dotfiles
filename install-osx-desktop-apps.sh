@@ -37,4 +37,4 @@ is_ci || osascript -e 'tell application "System Events" to make login item at en
 # Turn off Hammerspoon dock icon
 defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool FALSE
 killall Hammerspoon || true
-open /Applications/Hammerspoon.app
+is_ci || open /Applications/Hammerspoon.app
