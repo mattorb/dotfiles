@@ -10,7 +10,6 @@ source .cisupport/is_ci.sh
 is_ci && export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=/Applications"
 
 brew install --cask \
-    keepassxc \
     bartender \
     cd-to \
     nvalt \

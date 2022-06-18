@@ -21,6 +21,8 @@ else
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # Bypass upstream xattr issues with quarantine and latest OS X versions.  specifically, quicklook-csv cask install failed
 # TODO: remove me when a better solution is avail.  
@@ -44,6 +46,7 @@ brew "parallel"
 brew "ripgrep"
 brew "swiftformat"
 brew "chisel"
+brew "hub"
 EOS
 # exa, dust, multitime "Tenzer/tap/multitime" tap went bad: ref: http://tratt.net/laurie/src/multitime/
 
@@ -53,9 +56,9 @@ brew install --cask swiftformat-for-xcode provisionql qlcolorcode qlstephen qlma
 # last tested ver: fish 3.4.1
 brew install fish
 
-echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
+echo "$(brew --prefix)/bin/fish" | sudo tee -a /etc/shells
 is_ci || sudo -v
-is_ci || sudo chsh -s /usr/local/bin/fish $(whoami)
+is_ci || sudo chsh -s "$(brew --prefix)/bin/fish" $(whoami)
 
 # fisher for completions. 4.1.0
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
@@ -64,13 +67,13 @@ is_azure_devops || fish -c "fisher install jethrokuan/fzf"
 is_azure_devops || fish -c "fisher install derphilipp/enter-docker-fzf"
 
 brew install --cask \
-    docker \
     visual-studio-code 
 
 # Equivalent of VS [gui] Command Palette  "Shell command: Install 'code' command in PATH"
-ln -sf /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code
+ln -sf /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code $(brew --prefix)/bin/code
 
-code --install-extension lunaryorn.fish-ide
+code --install-extension lunaryorn.fish-ide --force
+code --install-extension fabiospampinato.vscode-todo-plus --force 
 
 ln -sf $(pwd)/prefs/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
 
@@ -90,7 +93,7 @@ echo '3. Then git config --global user.email "Your_Email@...com"'
 echo '4. Create a git Personal Access token, then:  "hub browse" and enter git user and Access token to configure hub to use that'
 echo '5. Install dropbox and Configure dropbox accounts'
 echo '6. Configure Slack accounts'
-echo '7. Configure nvalt storage backend /Dropbox/Notes'
+echo '7. Configure nvalt storage backend /Dropbox/Notes and "plain text" format, set hide dock icon, show menu'
 echo '8. Install Air Mail from App Store and configure accounts'
 echo '9. Add Bartender license, configure bartender'
 echo '10. Configure Keepass'

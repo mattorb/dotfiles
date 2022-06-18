@@ -1,3 +1,7 @@
+if test -e /opt/homebrew/bin/brew 
+    eval $(/opt/homebrew/bin/brew shellenv)
+end
+
 set -xg PATH $HOME/bin $PATH
 set -xg EDITOR (which code) -w
 
