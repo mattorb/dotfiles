@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macOS-latest] 
+        os: [macos-11, macos-12] 
     steps:
     - uses: actions/checkout@v1
     - name: Check versions of pre-installed software/system
