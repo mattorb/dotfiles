@@ -1,5 +1,4 @@
-[![Github Action Build Status](https://github.com/mattorb/dotfiles/workflows/install/badge.svg)](https://github.com/mattorb/dotfiles/actions?workflow=install) 
-[![Azure DevOps Build Status](https://dev.azure.com/mattorb/dotfiles/_apis/build/status/mattorb.dotfiles?branchName=master)](https://dev.azure.com/mattorb/dotfiles/_build/latest?definitionId=1&branchName=master)
+[![install](https://github.com/arjaygallentes/dotfiles-mattorb/actions/workflows/install.yml/badge.svg)](https://github.com/arjaygallentes/dotfiles-mattorb/actions/workflows/install.yml)
 
 # Matt's MacOS dotfiles
 Fish, VS Code, Hammerspoon, FZF, git aliases, git helpers (fclone/fhub).
