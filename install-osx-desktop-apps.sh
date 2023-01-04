@@ -13,9 +13,8 @@ brew install --cask \
     bartender \
     cd-to \
     paw \
-    slack \
-    wireshark \
     keycastr \
+    svn \
     hammerspoon
 
 # Disabling nvalt which has a cask error atm.
@@ -29,7 +28,8 @@ ln -sf $(pwd)/hw/atreus/kaleidoscope_with_chrysalis $HOME/.config
 ln -sf $(pwd)/hammerspoon $HOME/.hammerspoon
 
 # Yah . . . this works, svn download a sub-dir of a github repo to a dest dir
-svn export https://github.com/mattorb/keyboard/branches/customizations/hammerspoon hammerspoon/keyboard
+#svn export https://github.com/mattorb/keyboard/branches/customizations/hammerspoon hammerspoon/keyboard
+svn export https://github.com/mattorb/keyboard/tree/customizations/hammerspoon hammerspoon/keyboard
 
 is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Hammerspoon.app", hidden:true}' > /dev/null
 is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/nvALT.app", hidden:true}' > /dev/null
