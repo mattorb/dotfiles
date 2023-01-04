@@ -22,6 +22,10 @@ main () {
 
 main
 
+find * -name "setup.sh" -not -wholename "packages*" | while read setup; do
+    ./$setup
+done
+
 echo All Done!
 echo Restarting shell
 is_azure_devops || exec "$(which $SHELL)" -l
