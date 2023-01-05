@@ -5,8 +5,8 @@ cd "$DIR"
 
 . ../scripts/functions.sh
 
-SOURCE="$(realpath .)"
-ALACRITTY_PATH="$(realpath ~/.config/alacritty)"
+SOURCE="$(realpath -m .)"
+ALACRITTY_PATH="$(realpath -m ~/.config/alacritty)"
 
 info "Setting up Alacritty..."
 
