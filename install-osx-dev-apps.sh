@@ -40,7 +40,6 @@ brew bundle --file=- <<-EOS
 tap "homebrew/cask"
 brew "ruby"
 brew "jq"
-brew "alacritty"
 brew "diff-so-fancy"
 brew "fzf"
 brew "parallel"
@@ -51,7 +50,7 @@ brew "hub"
 EOS
 # exa, dust, multitime "Tenzer/tap/multitime" tap went bad: ref: http://tratt.net/laurie/src/multitime/
 
-
+brew install --cask alacritty
 brew install --cask swiftformat-for-xcode provisionql qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
 # last tested ver: fish 3.4.1
