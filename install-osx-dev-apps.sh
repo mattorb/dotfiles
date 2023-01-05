@@ -40,6 +40,7 @@ brew bundle --file=- <<-EOS
 tap "homebrew/cask"
 brew "ruby"
 brew "jq"
+brew "alacritty"
 brew "diff-so-fancy"
 brew "fzf"
 brew "parallel"
