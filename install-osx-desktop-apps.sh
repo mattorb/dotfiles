@@ -16,9 +16,9 @@ brew install --cask \
     slack \
     wireshark \
     keycastr \
-    hammerspoon
+    hammerspoon \
+    obsidian
 
-# Disabling nvalt which has a cask error atm.
 # Disabling arq where the cask does not seem to stay current
 
 # Disabling p4v where the binary appears to change without version revs (according to sha checksum comparison failures)
@@ -32,7 +32,7 @@ ln -sf $(pwd)/hammerspoon $HOME/.hammerspoon
 svn export https://github.com/mattorb/keyboard/branches/customizations/hammerspoon hammerspoon/keyboard
 
 is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Hammerspoon.app", hidden:true}' > /dev/null
-is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/nvALT.app", hidden:true}' > /dev/null
+is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Obsidian.app", hidden:true}' > /dev/null
 
 # Turn off Hammerspoon dock icon
 defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool FALSE

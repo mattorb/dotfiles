@@ -4,5 +4,12 @@
     "window.nativeTabs": true,
     "window.zoomLevel": 1,
     "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
-    "security.workspace.trust.enabled": false
+    "security.workspace.trust.enabled": false,
+    "editor.inlineSuggest.enabled": true,
+    "lldb.library": "/Applications/Xcode-15.1.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+    "lldb.launch.expressions": "native",
+    "python.defaultInterpreterPath": "/Users/msmith/Projects/leech/leech",
+    "git.openRepositoryInParentFolders": "never",
+    "terminal.integrated.inheritEnv": false,
+    "tabby.usage.anonymousUsageTracking": true
 }

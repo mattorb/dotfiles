@@ -23,3 +23,10 @@ alias l 'exa -l -g --git'
 
 # Shows all timestamps in their full glory
 alias lf 'exa -guUmhl --git --time-style long-iso'
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /Users/msmith/anaconda3/bin/conda
+    eval /Users/msmith/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+end
+# <<< conda initialize <<<
+
