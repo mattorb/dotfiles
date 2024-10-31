@@ -28,10 +28,14 @@ ln -sf $(pwd)/hw/atreus/kaleidoscope_with_chrysalis $HOME/.config
 
 ln -sf $(pwd)/hammerspoon $HOME/.hammerspoon
 
-# Ick . . . this works strangely, svn download a sub-dir of a github repo to a dest dir
-brew install subversion 
-svn export https://github.com/mattorb/keyboard/branches/customizations/hammerspoon hammerspoon/keyboard
-brew remove subversion
+
+# sparse checkout https://github.com/mattorb/keyboard/branches/customizations/hammerspoon
+git clone --filter=blob:none --no-checkout https://github.com/mattorb/keyboard
+cd keyboard
+git sparse-checkout init --cone
+git sparse-checkout set hammerspoon
+git checkout customizations
+cd ..
 
 is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Hammerspoon.app", hidden:true}' > /dev/null
 is_ci || osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Obsidian.app", hidden:true}' > /dev/null
