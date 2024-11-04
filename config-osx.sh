@@ -357,3 +357,12 @@ killAll ControlStrip
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 
+###############################################################################
+# Sequoia	                                                                  #
+###############################################################################
+
+# Sound: always show in menu bar
+defaults -currentHost write com.apple.controlcenter Sound -int 18
+
+# Battery - show percentage
+defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool true
