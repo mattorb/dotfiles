@@ -19,10 +19,25 @@ if test -e ~/.config/fish/locals.fish
     source ~/.config/fish/locals.fish
 end
 
-alias l 'exa -l -g --git'
+# glow for markdown files, override cat muscle memory :)
+function cat
+    if string match -q '*.md' -- $argv[1]
+        glow -p -w (math (tput cols) - 5) $argv
+    else
+        command cat $argv
+    end
+end
+
+function glow
+    command glow -p -w (math (tput cols) - 5) $argv
+end
+
+# eza replace exa
+alias l 'eza -l -g --git'
 
 # Shows all timestamps in their full glory
-alias lf 'exa -guUmhl --git --time-style long-iso'
+alias lf 'eza -guUmhl --git --time-style long-iso'
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /Users/msmith/anaconda3/bin/conda

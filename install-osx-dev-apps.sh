@@ -47,8 +47,10 @@ brew "ripgrep"
 brew "swiftformat"
 brew "chisel"
 brew "hub"
+brew "glow"
+brew "eza"
 EOS
-# exa, dust, multitime "Tenzer/tap/multitime" tap went bad: ref: http://tratt.net/laurie/src/multitime/
+# dust, multitime "Tenzer/tap/multitime" tap went bad: ref: http://tratt.net/laurie/src/multitime/
 
 brew install --cask swiftformat-for-xcode provisionql qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
