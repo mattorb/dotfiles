@@ -12,7 +12,7 @@ function domain
     set -l domain $parts[1]
 
     if test -z "$domain" 
-        domain=$argv[1]
+        set domain $argv[1]
     end
 
     echo (string replace www. '' $domain)
