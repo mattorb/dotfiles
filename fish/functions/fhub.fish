@@ -6,5 +6,5 @@ end
 function browsegithubrepo
     set REPO "$argv[1]"
     echo Opening $REPO in browser
-    hub browse $REPO
+    gh browse $REPO
 end

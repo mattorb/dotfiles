@@ -46,7 +46,7 @@ brew "parallel"
 brew "ripgrep"
 brew "swiftformat"
 brew "chisel"
-brew "hub"
+brew "gh"
 brew "glow"
 brew "eza"
 EOS
